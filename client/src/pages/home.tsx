@@ -90,22 +90,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Company Values */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {companyValues.map((value, index) => (
-              <div key={index} className="text-center group" data-testid={`value-${value.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                <div className={`w-16 h-16 ${getValueColor(value.icon)} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                  {getValueIcon(value.icon)}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* About Company */}
       <section className="py-16 bg-white">
