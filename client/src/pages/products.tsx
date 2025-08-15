@@ -123,7 +123,6 @@ export default function Products() {
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
                 {categories?.map((category) => (
                   <SelectItem key={category.id} value={category.name} data-testid={`option-category-${category.id}`}>
                     {category.name}
@@ -138,7 +137,6 @@ export default function Products() {
                 <SelectValue placeholder="All Specialties" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Specialties</SelectItem>
                 {specialties?.map((specialty) => (
                   <SelectItem key={specialty.id} value={specialty.name} data-testid={`option-specialty-${specialty.id}`}>
                     {specialty.name}
