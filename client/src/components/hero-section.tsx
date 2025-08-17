@@ -27,7 +27,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-organic-green to-pharma-blue text-white overflow-hidden">
+    <section className="relative bg-gradient-to-r from-organic-green/80 to-pharma-blue/80 text-white">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div 
@@ -85,7 +85,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 onClick={handleExploreProducts}
-                className="bg-white text-organic-green px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="bg-white text-organic-green/80 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 data-testid="button-explore-products"
               >
                 Explore Products
@@ -93,7 +93,7 @@ export default function HeroSection() {
               <Button 
                 variant="outline"
                 onClick={handleContactUs}
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-organic-green transition-colors"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-organic-green/80 transition-colors"
                 data-testid="button-contact-us"
               >
                 Contact Us
@@ -105,39 +105,31 @@ export default function HeroSection() {
             {/* Modern pharmaceutical products showcase display */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-3 hover:rotate-0 transition-transform" data-testid="card-product-supplements">
-                  <div className="w-full h-32 bg-gradient-to-b from-white/20 to-white/10 rounded-lg flex items-center justify-center">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-3 hover:rotate-0 transition-transform">
+                  <div className="w-full h-32 bg-gradient-to-b from-organic-green/10 to-pharma-blue/10 rounded-lg flex items-center justify-center">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
                       <span className="text-2xl">💊</span>
                     </div>
                   </div>
                   <p className="text-sm mt-2 text-center font-medium">Organic Supplements</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform -rotate-2 hover:rotate-0 transition-transform" data-testid="card-product-herbal">
-                  <div className="w-full h-32 bg-gradient-to-b from-white/20 to-white/10 rounded-lg flex items-center justify-center">
+                {/* <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-3 hover:rotate-0 transition-transform">
+                  <div className="w-full h-32 bg-gradient-to-b from-organic-green/10 to-pharma-blue/10 rounded-lg flex items-center justify-center">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
                       <span className="text-2xl">🌿</span>
                     </div>
                   </div>
                   <p className="text-sm mt-2 text-center font-medium">Herbal Medicines</p>
                 </div>
-              </div>
+              </div> */}
               <div className="space-y-4 mt-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform -rotate-1 hover:rotate-0 transition-transform" data-testid="card-product-remedies">
-                  <div className="w-full h-32 bg-gradient-to-b from-white/20 to-white/10 rounded-lg flex items-center justify-center">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-3 hover:rotate-0 transition-transform">
+                  <div className="w-full h-32 bg-gradient-to-b from-organic-green/10 to-pharma-blue/10 rounded-lg flex items-center justify-center">
                     <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
                       <span className="text-2xl">🧪</span>
                     </div>
                   </div>
                   <p className="text-sm mt-2 text-center font-medium">Natural Remedies</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-2 hover:rotate-0 transition-transform" data-testid="card-product-ayurvedic">
-                  <div className="w-full h-32 bg-gradient-to-b from-white/20 to-white/10 rounded-lg flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-2xl">🍃</span>
-                    </div>
-                  </div>
-                  <p className="text-sm mt-2 text-center font-medium">Ayurvedic Care</p>
                 </div>
               </div>
             </div>
