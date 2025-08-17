@@ -113,15 +113,6 @@ export default function HeroSection() {
                   </div>
                   <p className="text-sm mt-2 text-center font-medium">Organic Supplements</p>
                 </div>
-                {/* <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-3 hover:rotate-0 transition-transform">
-                  <div className="w-full h-32 bg-gradient-to-b from-organic-green/10 to-pharma-blue/10 rounded-lg flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-2xl">🌿</span>
-                    </div>
-                  </div>
-                  <p className="text-sm mt-2 text-center font-medium">Herbal Medicines</p>
-                </div>
-              </div> */}
               <div className="space-y-4 mt-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-3 hover:rotate-0 transition-transform">
                   <div className="w-full h-32 bg-gradient-to-b from-organic-green/10 to-pharma-blue/10 rounded-lg flex items-center justify-center">
