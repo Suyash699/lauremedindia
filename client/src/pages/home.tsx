@@ -114,7 +114,7 @@ export default function Home() {
           </div>
 
           {/* Right Content - Half width */}
-          <div className="w-1/2 py-12 px-8 lg:px-12 space-y-6">
+          <div className="w-1/2 px-8 lg:px-12 space-y-6">
               <p
                 className="text-organic-green/80 font-semibold mb-2"
                 data-testid="text-welcome"
