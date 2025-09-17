@@ -108,7 +108,7 @@ export default function Home() {
             <img
               src={premiumPhoto}
               alt="Lauremed Organic India facility and operations"
-              className="w-full h-fit object-cover"
+              className="w-full h-3/5 object-cover"
               data-testid="img-about-company"
             />
           </div>
