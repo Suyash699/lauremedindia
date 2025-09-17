@@ -64,20 +64,19 @@ export default function Contact() {
       icon: MapPin,
       title: "Address",
       details: [
-        "Lauremed Organic India Pvt. Ltd.",
-        "Industrial Zone, Navi Mumbai,",
-        "Maharashtra 400708, India"
+        "Lauremed Organic India, C-202/203, 1st floor, Disma Complex",
+        "Steel Market, Kalamboli, Navi Mumbai,",
+        "Maharashtra 410218, India"
       ],
-      color: "text-organic-green"
+      color: "text-organic-green/80"
     },
     {
       icon: Phone,
       title: "Phone",
       details: [
-        "+91 8355963959",
-        "Toll Free: 1800-123-4567"
+        "+91 7400077781"
       ],
-      color: "text-pharma-blue"
+      color: "text-pharma-blue/80"
     },
     {
       icon: Mail,
@@ -86,7 +85,7 @@ export default function Contact() {
         "info@lauremedorganic.com",
         "support@lauremedorganic.com"
       ],
-      color: "text-accent-orange"
+      color: "text-accent-orange/80"
     },
     {
       icon: Clock,
@@ -105,30 +104,30 @@ export default function Contact() {
       title: "Customer Support",
       description: "General inquiries and product support",
       email: "support@lauremedorganic.com",
-      phone: "+91 8355963959"
+      phone: "+91 7400077781"
     },
     {
       icon: Building,
       title: "Business Partnership",
       description: "Distribution and partnership opportunities",
       email: "business@lauremedorganic.com",
-      phone: "+91 8355963960"
+      phone: "+91 7400077781"
     },
     {
       icon: HelpCircle,
       title: "Technical Support",
       description: "Product information and technical queries",
       email: "technical@lauremedorganic.com",
-      phone: "+91 8355963961"
+      phone: "+91 7400077781"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-blue-50">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-organic-green to-pharma-blue text-white">
+      <section className="py-16 bg-gradient-to-r from-organic-green/80 to-pharma-blue/80 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6" data-testid="text-contact-title">
             Contact Us
@@ -140,7 +139,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {contactInfo.map((info, index) => (
@@ -165,7 +164,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form and Map */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -252,8 +251,6 @@ export default function Contact() {
                           <SelectItem value="support">Customer Support</SelectItem>
                           <SelectItem value="partnership">Business Partnership</SelectItem>
                           <SelectItem value="distribution">Distribution Inquiry</SelectItem>
-                          <SelectItem value="media">Media & Press</SelectItem>
-                          <SelectItem value="careers">Careers</SelectItem>
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
@@ -298,7 +295,7 @@ export default function Contact() {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-organic-green hover:bg-organic-dark"
+                    className="w-full bg-organic-green/60 hover:bg-organic-dark/80"
                     disabled={isSubmitting}
                     data-testid="button-submit-form"
                   >
@@ -339,14 +336,14 @@ export default function Contact() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Button size="sm" className="bg-pharma-blue hover:bg-pharma-dark" asChild data-testid="button-call-now">
-                      <a href="tel:+918355963959">
+                    <Button size="sm" className="bg-pharma-blue/80 hover:bg-pharma-dark/80" asChild data-testid="button-call-now">
+                      <a href="tel:+917400077781">
                         <Phone className="w-4 h-4 mr-2" />
                         Call Now
                       </a>
                     </Button>
                     <Button size="sm" className="bg-green-500 hover:bg-green-600" asChild data-testid="button-whatsapp-now">
-                      <a href="https://wa.me/918355963959" target="_blank" rel="noopener noreferrer">
+                      <a href="https://wa.me/917400077781" target="_blank" rel="noopener noreferrer">
                         <MessageCircle className="w-4 h-4 mr-2" />
                         WhatsApp
                       </a>
@@ -363,7 +360,7 @@ export default function Contact() {
       </section>
 
       {/* Department Contact */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-departments-title">
@@ -378,7 +375,7 @@ export default function Contact() {
             {departments.map((dept, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow" data-testid={`card-department-${index}`}>
                 <CardContent className="p-6 text-center">
-                  <dept.icon className="w-16 h-16 text-organic-green mx-auto mb-4" />
+                  <dept.icon className="w-16 h-16 text-organic-green/80 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-gray-800 mb-3" data-testid={`text-department-title-${index}`}>
                     {dept.title}
                   </h3>
@@ -387,12 +384,12 @@ export default function Contact() {
                   </p>
                   <div className="space-y-2">
                     <p className="text-sm">
-                      <a href={`mailto:${dept.email}`} className="text-organic-green hover:underline" data-testid={`link-department-email-${index}`}>
+                      <a href={`mailto:${dept.email}`} className="text-organic-green/80 hover:underline" data-testid={`link-department-email-${index}`}>
                         {dept.email}
                       </a>
                     </p>
                     <p className="text-sm">
-                      <a href={`tel:${dept.phone}`} className="text-pharma-blue hover:underline" data-testid={`link-department-phone-${index}`}>
+                      <a href={`tel:${dept.phone}`} className="text-pharma-blue/80 hover:underline" data-testid={`link-department-phone-${index}`}>
                         {dept.phone}
                       </a>
                     </p>

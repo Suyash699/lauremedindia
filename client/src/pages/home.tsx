@@ -11,6 +11,7 @@ import { Shield, Lock, DollarSign, Award } from "lucide-react";
 import { Link } from "wouter";
 import { companyValues, companyStats } from "@/lib/data";
 import { type Product, type Category, type Specialty } from "@shared/schema";
+import premiumPhoto from "@assets/premium_photo.png";
 
 export default function Home() {
   const { data: products } = useQuery<Product[]>({
@@ -67,7 +68,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Partner Logos Carousel */}
-      <section className="bg-white py-8 border-b">
+      <section className="bg-gray-100 py-8 border-b">
         <div className="container mx-auto px-4">
           <div className="text-center mb-6">
             <h3 className="text-lg font-semibold text-gray-700 mb-2" data-testid="text-quality-title">Experience Our Quality Yourself</h3>
@@ -81,7 +82,7 @@ export default function Home() {
                 className="flex-shrink-0 w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center border hover:shadow-md transition-shadow"
                 data-testid={`certification-${cert.toLowerCase()}`}
               >
-                <span className={`text-xs font-bold ${cert === 'ORGANIC' ? 'text-organic-green' : 'text-gray-600'}`}>
+                <span className={`text-xs font-bold ${cert === 'ORGANIC' ? 'text-organic-green/80' : 'text-gray-600'}`}>
                   {cert}
                 </span>
               </div>
@@ -92,26 +93,26 @@ export default function Home() {
 
 
       {/* About Company */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-green-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop" 
-                alt="Modern pharmaceutical laboratory with organic medicine production" 
+                src={premiumPhoto} 
+                alt="Lauremed Organic India facility and operations" 
                 className="rounded-xl shadow-lg w-full h-auto"
                 data-testid="img-about-company"
               />
             </div>
             
             <div className="space-y-6">
-              <p className="text-organic-green font-semibold mb-2" data-testid="text-welcome">WELCOME TO Lauremed Organic India</p>
+              <p className="text-organic-green/80 font-semibold mb-2" data-testid="text-welcome">WELCOME TO Lauremed Organic India</p>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-800" data-testid="text-company-title">
-                Lauremed Is Now Fastest Growing Organic Pharmaceutical Company In India
+                Lauremed Aims To Be The Fastest Growing Organic Pharmaceutical Company In India
               </h2>
               
               <p className="text-gray-600 leading-relaxed" data-testid="text-company-description-1">
-                Incorporated in 2019, Lauremed Organic India is now the fastest growing organic pharmaceutical company in India. We are a patient-focused, values-based, Quality driven pharmaceutical company committed to bringing Better Health and a Brighter Future to people worldwide through natural and organic medicine solutions.
+                Incorporated in 2025, Lauremed Organic India aims to be the fastest growing organic pharmaceutical company in India. We are a patient-focused, values-based, Quality driven pharmaceutical company committed to bringing Better Health and a Brighter Future to people worldwide through organic medicine solutions.
               </p>
               
               <p className="text-gray-600 leading-relaxed" data-testid="text-company-description-2">
@@ -119,17 +120,17 @@ export default function Home() {
               </p>
               
               <div className="grid grid-cols-2 gap-4 pt-4">
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="text-2xl font-bold text-organic-green" data-testid="stat-customers-small">{companyStats.customers}</div>
+                {/* <div className="text-center p-4 bg-gray-50 rounded-lg">
+                  <div className="text-2xl font-bold text-organic-green/80" data-testid="stat-customers-small">{companyStats.customers}</div>
                   <div className="text-sm text-gray-600">Satisfied Customers</div>
                 </div>
                 <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="text-2xl font-bold text-organic-green" data-testid="stat-products-small">{companyStats.products}</div>
+                  <div className="text-2xl font-bold text-organic-green/80" data-testid="stat-products-small">{companyStats.products}</div>
                   <div className="text-sm text-gray-600">Organic Products</div>
-                </div>
+                </div> */}
               </div>
               
-              <Button asChild className="bg-organic-green hover:bg-organic-dark" data-testid="button-know-more">
+              <Button asChild className="bg-organic-green/60 hover:bg-organic-dark/80" data-testid="button-know-more">
                 <Link href="/about">Know More About Us</Link>
               </Button>
             </div>
@@ -138,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* Specialties */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-specialties-title">
@@ -158,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-featured-products-title">
@@ -176,7 +177,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Button asChild className="bg-pharma-blue hover:bg-pharma-dark" data-testid="button-view-all-products">
+            <Button asChild className="bg-pharma-blue/60 hover:bg-pharma-dark/80" data-testid="button-view-all-products">
               <Link href="/products">View All Products</Link>
             </Button>
           </div>
@@ -184,7 +185,7 @@ export default function Home() {
       </section>
 
       {/* Popular Categories */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-popular-categories-title">
@@ -204,20 +205,20 @@ export default function Home() {
       </section>
 
       {/* Company Statistics */}
-      <StatsSection />
+      {/* <StatsSection /> */}
 
       {/* Geographic Presence */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-geographic-title">
               Spreading Wings Across the Globe
             </h2>
-            <h3 className="text-2xl font-semibold text-organic-green mb-6" data-testid="text-presence-india">
+            <h3 className="text-2xl font-semibold text-organic-green/80 mb-6" data-testid="text-presence-india">
               Our Presence In INDIA
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto" data-testid="text-geographic-description">
-              Lauremed Organic India is your reliable pharmaceutical distribution company. With pharmacies across the country, we provide convenience, knowledge, and a wide choice of organic healthcare items. As being the fastest growing organic pharmaceutical company, we are committed to bringing natural wellness to every corner of India.
+              Lauremed Organic India is your reliable pharmaceutical distribution company. With pharmacies across the country, we provide convenience, knowledge, and a wide choice of organic healthcare items. As a growing organic pharmaceutical company, we are committed to bringing natural wellness to every corner of India.
             </p>
           </div>
 
@@ -234,20 +235,8 @@ export default function Home() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-gray-50 rounded-lg" data-testid="stat-states">
-                  <div className="text-2xl font-bold text-organic-green mb-2">28</div>
+                  <div className="text-2xl font-bold text-organic-green/80 mb-2">3</div>
                   <div className="text-sm text-gray-600">States Covered</div>
-                </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg" data-testid="stat-cities">
-                  <div className="text-2xl font-bold text-organic-green mb-2">500+</div>
-                  <div className="text-sm text-gray-600">Cities Reached</div>
-                </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg" data-testid="stat-territories">
-                  <div className="text-2xl font-bold text-organic-green mb-2">8</div>
-                  <div className="text-sm text-gray-600">Union Territories</div>
-                </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg" data-testid="stat-distribution-centers">
-                  <div className="text-2xl font-bold text-organic-green mb-2">50+</div>
-                  <div className="text-sm text-gray-600">Distribution Centers</div>
                 </div>
               </div>
               
@@ -255,13 +244,8 @@ export default function Home() {
                 <h4 className="font-semibold text-gray-800 mb-3" data-testid="text-key-markets">Key Market Presence</h4>
                 <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
                   <div>• Maharashtra</div>
-                  <div>• Gujarat</div>
-                  <div>• Karnataka</div>
-                  <div>• Tamil Nadu</div>
-                  <div>• Delhi NCR</div>
-                  <div>• West Bengal</div>
-                  <div>• Rajasthan</div>
                   <div>• Uttar Pradesh</div>
+                  <div>• Madhya Pradesh</div>
                 </div>
               </div>
             </div>

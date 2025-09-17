@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-organic-green to-organic-dark rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-organic-green/70 to-organic-dark/80 rounded-full flex items-center justify-center">
                 <span className="text-white text-xl font-bold">L</span>
               </div>
               <div>
@@ -20,33 +20,33 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed" data-testid="text-company-description">
-              Leading the way in organic pharmaceutical solutions, Lauremed Organic India is committed to providing natural, safe, and effective healthcare products that promote wellness and healing through the power of nature.
+              Leading the way in pharmaceutical solutions, Lauremed Organic India is committed to providing natural, safe, and effective healthcare products that promote wellness and healing through the power of nature.
             </p>
             <div className="flex space-x-4">
               <Button 
                 size="sm" 
-                className="bg-organic-green hover:bg-organic-dark p-3 rounded-full"
+                className="bg-organic-green/80 hover:bg-organic-dark/80 p-3 rounded-full"
                 data-testid="button-social-facebook"
               >
                 <Facebook className="w-4 h-4" />
               </Button>
               <Button 
                 size="sm" 
-                className="bg-organic-green hover:bg-organic-dark p-3 rounded-full"
+                className="bg-organic-green/80 hover:bg-organic-dark/80 p-3 rounded-full"
                 data-testid="button-social-twitter"
               >
                 <Twitter className="w-4 h-4" />
               </Button>
               <Button 
                 size="sm" 
-                className="bg-organic-green hover:bg-organic-dark p-3 rounded-full"
+                className="bg-organic-green/80 hover:bg-organic-dark/80 p-3 rounded-full"
                 data-testid="button-social-linkedin"
               >
                 <Linkedin className="w-4 h-4" />
               </Button>
               <Button 
                 size="sm" 
-                className="bg-organic-green hover:bg-organic-dark p-3 rounded-full"
+                className="bg-organic-green/80 hover:bg-organic-dark/80 p-3 rounded-full"
                 data-testid="button-social-instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -62,7 +62,7 @@ export default function Footer() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-gray-300 hover:text-organic-green transition-colors"
+                  className="block text-gray-300 hover:text-organic-green/80 transition-colors"
                   data-testid={`link-footer-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {item.name}
@@ -70,14 +70,14 @@ export default function Footer() {
               ))}
               <Link
                 href="/quality"
-                className="block text-gray-300 hover:text-organic-green transition-colors"
+                className="block text-gray-300 hover:text-organic-green/80 transition-colors"
                 data-testid="link-footer-quality"
               >
                 Quality Assurance
               </Link>
               <Link
                 href="/certifications"
-                className="block text-gray-300 hover:text-organic-green transition-colors"
+                className="block text-gray-300 hover:text-organic-green/80 transition-colors"
                 data-testid="link-footer-certifications"
               >
                 Certifications
@@ -90,34 +90,34 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6" data-testid="text-contact-title">Contact Information</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-organic-green mt-1" />
+                <MapPin className="w-5 h-5 text-organic-green/80 mt-1" />
                 <div data-testid="text-address">
-                  <p className="text-gray-300">Industrial Zone, Navi Mumbai,</p>
-                  <p className="text-gray-300">Maharashtra 400708, India</p>
+                  <p className="text-gray-300">Steel Market, Kalamboli, Navi Mumbai,</p>
+                  <p className="text-gray-300">Maharashtra 410218, India</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-organic-green" />
+                <Phone className="w-5 h-5 text-organic-green/80" />
                 <a 
-                  href="tel:+918355963959" 
-                  className="text-gray-300 hover:text-organic-green transition-colors"
+                  href="tel:+917400077781" 
+                  className="text-gray-300 hover:text-organic-green/80 transition-colors"
                   data-testid="link-phone"
                 >
-                  +91 8355963959
+                  +91 7400077781
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-organic-green" />
+                <Mail className="w-5 h-5 text-organic-green/80" />
                 <a 
                   href="mailto:info@lauremedorganic.com" 
-                  className="text-gray-300 hover:text-organic-green transition-colors"
+                  className="text-gray-300 hover:text-organic-green/80 transition-colors"
                   data-testid="link-email-footer"
                 >
                   info@lauremedorganic.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Clock className="w-5 h-5 text-organic-green" />
+                <Clock className="w-5 h-5 text-organic-green/80" />
                 <span className="text-gray-300" data-testid="text-business-hours">Mon - Sat: 9:00 AM - 7:00 PM</span>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function Footer() {
             <div className="flex justify-center items-center space-x-4 flex-wrap gap-4">
               {certifications.map((cert) => (
                 <div key={cert} className="bg-gray-800 px-4 py-2 rounded-lg" data-testid={`badge-certification-${cert.toLowerCase().replace(/\s+/g, '-')}`}>
-                  <span className="font-bold text-organic-green">{cert}</span>
+                  <span className="font-bold text-white">{cert}</span>
                 </div>
               ))}
             </div>
@@ -142,11 +142,11 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400" data-testid="text-copyright">
             © 2024 Lauremed Organic India. All rights reserved. |{" "}
-            <Link href="/privacy" className="hover:text-organic-green transition-colors" data-testid="link-privacy">
+            <Link href="/privacy" className="hover:text-organic-green/80 transition-colors" data-testid="link-privacy">
               Privacy Policy
             </Link>{" "}
             |{" "}
-            <Link href="/terms" className="hover:text-organic-green transition-colors" data-testid="link-terms">
+            <Link href="/terms" className="hover:text-organic-green/80 transition-colors" data-testid="link-terms">
               Terms of Service
             </Link>
           </p>

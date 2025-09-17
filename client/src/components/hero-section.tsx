@@ -4,19 +4,49 @@ import { Badge } from "@/components/ui/badge";
 import { heroTaglines } from "@/lib/data";
 import { useLocation } from "wouter";
 
+const badgeDetails = {
+  "badge-high-quality": "High Quality Production",
+  "badge-fastest-growing": "Fastest Growing Organic Pharma",
+  "badge-patient-focused": "Patient Focused",
+  "badge-quality-first": "Quality First",
+  "badge-organic": "100% Organic"
+}
+
 export default function HeroSection() {
   const [, setLocation] = useLocation();
   const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
 
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentTaglineIndex((prevIndex) => 
+  //       (prevIndex + 1) % heroTaglines.length
+  //     );
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, []);
+  
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTaglineIndex((prevIndex) => 
-        (prevIndex + 1) % heroTaglines.length
-      );
-    }, 3000);
+    const currentTagline = heroTaglines[currentTaglineIndex];
 
-    return () => clearInterval(interval);
-  }, []);
+    if (charIndex < currentTagline.length) {
+      // keep typing
+      const timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev + currentTagline[charIndex]);
+        setCharIndex((prev) => prev + 1);
+      }, 100); // typing speed
+      return () => clearTimeout(timeout);
+    } else {
+      // finished typing → wait, then move to next tagline
+      const timeout = setTimeout(() => {
+        setDisplayedText("");
+        setCharIndex(0);
+        setCurrentTaglineIndex((prev) => (prev + 1) % heroTaglines.length);
+      }, 2000); // pause before next tagline
+      return () => clearTimeout(timeout);
+    }
+  }, [charIndex, currentTaglineIndex]);
 
   const handleExploreProducts = () => {
     setLocation("/products");
@@ -27,14 +57,14 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-organic-green/80 to-pharma-blue/80 text-white">
+    <section className="relative bg-gradient-to-r from-organic-green/50 to-pharma-blue/50 text-white h-3/5">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-1">
         <div 
           className="absolute inset-0" 
           style={{
-            backgroundImage: `url("data:image/svg+xml,<svg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><g fill='%23ffffff' fill-opacity='0.1'><circle cx='30' cy='30' r='2'/></g></svg>")`,
-            backgroundSize: "60px 60px"
+            backgroundImage: `url("https://plus.unsplash.com/premium_photo-1671721439325-d79f4bdd30ca?q=80&w=1863&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+            backgroundSize: "cover"
           }}
         ></div>
       </div>
@@ -47,21 +77,12 @@ export default function HeroSection() {
             </p>
             
             {/* Rotating Taglines */}
-            <div className="h-16 overflow-hidden">
-              <div 
-                className="transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateY(-${currentTaglineIndex * 4}rem)` }}
+            <div className="h-15 flex items-center">
+              <h1
+                className="text-4xl lg:text-5xl font-bold flex items-center"
               >
-                {heroTaglines.map((tagline, index) => (
-                  <h1 
-                    key={index}
-                    className="text-4xl lg:text-5xl font-bold leading-tight h-16 flex items-center"
-                    data-testid={`text-hero-tagline-${index}`}
-                  >
-                    {tagline}
-                  </h1>
-                ))}
-              </div>
+                {displayedText}
+              </h1>
             </div>
 
             <div className="flex flex-wrap gap-4 text-sm font-medium">
@@ -93,7 +114,7 @@ export default function HeroSection() {
               <Button 
                 variant="outline"
                 onClick={handleContactUs}
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-organic-green/80 transition-colors"
+                className="border-2 border-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-organic-green/80 transition-colors"
                 data-testid="button-contact-us"
               >
                 Contact Us

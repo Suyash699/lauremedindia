@@ -28,32 +28,23 @@ export default function Header() {
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-4 text-gray-600">
             <span className="flex items-center" data-testid="location-indicator">
-              <MapPin className="w-4 h-4 mr-2 text-organic-green" />
+              <MapPin className="w-4 h-4 mr-2 text-organic-green/80" />
               INDIA
             </span>
           </div>
           <div className="hidden md:flex items-center space-x-6 text-gray-600">
             <a 
               href="mailto:info@lauremedorganic.com" 
-              className="flex items-center hover:text-organic-green transition-colors"
+              className="flex items-center hover:text-organic-green/80 transition-colors"
               data-testid="link-email"
             >
               <Mail className="w-4 h-4 mr-2" />
               info@lauremedorganic.com
             </a>
             <span className="flex items-center" data-testid="text-hours">
-              <Clock className="w-4 h-4 mr-2 text-organic-green" />
+              <Clock className="w-4 h-4 mr-2 text-organic-green/80" />
               9:00 am to 7:00pm
             </span>
-            <div className="flex items-center space-x-2">
-              <Globe className="w-4 h-4 text-organic-green" />
-              <select className="bg-transparent text-gray-600 text-sm cursor-pointer" data-testid="select-language">
-                <option>English</option>
-                <option>Hindi</option>
-                <option>Spanish</option>
-                <option>French</option>
-              </select>
-            </div>
           </div>
         </div>
       </div>
@@ -63,12 +54,12 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3" data-testid="link-home">
-            <div className="w-12 h-12 bg-gradient-to-br from-organic-green to-organic-dark rounded-full flex items-center justify-center">
-              <span className="text-white text-xl font-bold">L</span>
+            <div>
+              <img src="https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-08e4-61f7-8ed1-6a11cf4e13d9/raw?se=2025-09-09T17%3A38%3A23Z&sp=r&sv=2024-08-04&sr=b&scid=537a8b1c-d562-5883-b34f-175785dd232b&skoid=f28c0102-4d9d-4950-baf0-4a8e5f6cf9d4&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-09T16%3A31%3A47Z&ske=2025-09-10T16%3A31%3A47Z&sks=b&skv=2024-08-04&sig=n2V1sa%2BlR9/jQptqTZ4uOeHU1%2BToJxVAVZulDkzCVtQ%3D" className="w-15 h-12" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-800">LAUREMED</h1>
-              <p className="text-sm text-organic-green font-medium">ORGANIC INDIA</p>
+              <h1 className="text-2xl font-bold text-pharma-blue/80">LAUREMED</h1>
+              <p className="text-sm text-organic-green/80 font-medium">ORGANIC INDIA</p>
             </div>
           </Link>
 
@@ -78,8 +69,8 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`font-medium transition-colors hover:text-organic-green ${
-                  location === item.href ? "text-organic-green" : "text-gray-700"
+                className={`font-medium transition-colors hover:text-organic-green/80 ${
+                  location === item.href ? "text-organic-green/80" : "text-gray-700"
                 }`}
                 data-testid={`link-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
@@ -103,34 +94,18 @@ export default function Header() {
               <Button
                 type="submit"
                 size="sm"
-                className="absolute right-1 top-1 h-8 w-8 p-0 bg-organic-green hover:bg-organic-dark"
+                className="absolute right-1 top-1 h-8 w-8 p-0 bg-organic-green/70 hover:bg-organic-dark/80"
                 data-testid="button-search"
               >
                 <Search className="w-4 h-4" />
               </Button>
             </form>
 
-            {/* Cart */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleCart}
-              className="relative"
-              data-testid="button-cart"
-            >
-              <ShoppingCart className="w-4 h-4" />
-              {getTotalItems() > 0 && (
-                <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-organic-green">
-                  {getTotalItems()}
-                </Badge>
-              )}
-            </Button>
-
             {/* Contact Info */}
             <div className="hidden xl:flex items-center space-x-2 text-sm">
               <div className="text-right">
                 <p className="font-semibold text-gray-800" data-testid="text-support-title">Sales & Service Support</p>
-                <p className="text-gray-600" data-testid="text-phone-number">+91 8355963959</p>
+                <p className="text-gray-600" data-testid="text-phone-number">+91 7400077781</p>
               </div>
               <div className="flex space-x-2">
                 <Button 
@@ -139,7 +114,7 @@ export default function Header() {
                   asChild
                   data-testid="button-phone"
                 >
-                  <a href="tel:+918355963959">
+                  <a href="tel:+917400077781">
                     <Phone className="w-4 h-4" />
                   </a>
                 </Button>
@@ -149,7 +124,7 @@ export default function Header() {
                   asChild
                   data-testid="button-whatsapp"
                 >
-                  <a href="https://wa.me/918355963959" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/917400077781" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-4 h-4" />
                   </a>
                 </Button>
@@ -170,8 +145,8 @@ export default function Header() {
                       key={item.name}
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`text-lg font-medium transition-colors hover:text-organic-green ${
-                        location === item.href ? "text-organic-green" : "text-gray-700"
+                      className={`text-lg font-medium transition-colors hover:text-organic-green/80 ${
+                        location === item.href ? "text-organic-green/80" : "text-gray-700"
                       }`}
                       data-testid={`link-mobile-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                     >
@@ -189,7 +164,7 @@ export default function Header() {
                         onChange={(e) => setSearchQuery(e.target.value)}
                         data-testid="input-mobile-search"
                       />
-                      <Button type="submit" size="sm" className="bg-organic-green hover:bg-organic-dark" data-testid="button-mobile-search">
+                      <Button type="submit" size="sm" className="bg-organic-green/80 hover:bg-organic-dark/80" data-testid="button-mobile-search">
                         <Search className="w-4 h-4" />
                       </Button>
                     </div>
@@ -199,14 +174,14 @@ export default function Header() {
                   <div className="mt-6 pt-6 border-t">
                     <p className="font-semibold text-gray-800 mb-2" data-testid="text-mobile-support">Sales & Service Support</p>
                     <div className="flex space-x-2">
-                      <Button size="sm" className="bg-pharma-blue hover:bg-pharma-dark" asChild data-testid="button-mobile-phone">
-                        <a href="tel:+918355963959">
+                      <Button size="sm" className="bg-pharma-blue/70 hover:bg-pharma-dark/80" asChild data-testid="button-mobile-phone">
+                        <a href="tel:+917400077781">
                           <Phone className="w-4 h-4 mr-2" />
                           Call
                         </a>
                       </Button>
                       <Button size="sm" className="bg-green-500 hover:bg-green-600" asChild data-testid="button-mobile-whatsapp">
-                        <a href="https://wa.me/918355963959" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/917400077781" target="_blank" rel="noopener noreferrer">
                           <MessageCircle className="w-4 h-4 mr-2" />
                           WhatsApp
                         </a>

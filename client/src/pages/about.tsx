@@ -10,35 +10,10 @@ import { companyStats, certifications } from "@/lib/data";
 export default function About() {
   const milestones = [
     {
-      year: "2019",
+      year: "2025",
       title: "Company Founded",
       description: "Lauremed Organic India was incorporated with a vision to revolutionize pharmaceutical industry through organic solutions."
     },
-    {
-      year: "2020",
-      title: "First Product Line",
-      description: "Launched our first range of organic supplements and herbal medicines with WHO GMP certification."
-    },
-    {
-      year: "2021",
-      title: "National Expansion",
-      description: "Expanded operations to 15 states across India, establishing key distribution networks."
-    },
-    {
-      year: "2022",
-      title: "Quality Certifications",
-      description: "Achieved ISO 9001:2015, AYUSH, and organic certifications, reinforcing our commitment to quality."
-    },
-    {
-      year: "2023",
-      title: "Market Leadership",
-      description: "Became one of India's fastest-growing organic pharmaceutical companies with 2M+ satisfied customers."
-    },
-    {
-      year: "2024",
-      title: "Future Vision",
-      description: "Continuing expansion with focus on research, innovation, and sustainable healthcare solutions."
-    }
   ];
 
   const values = [
@@ -52,13 +27,13 @@ export default function About() {
       icon: Leaf,
       title: "100% Organic Commitment",
       description: "We source only the finest organic ingredients, ensuring natural healing without compromise.",
-      color: "bg-organic-green"
+      color: "bg-organic-green/80"
     },
     {
       icon: Shield,
       title: "Quality Excellence",
       description: "Rigorous quality control and international certifications guarantee the highest standards.",
-      color: "bg-pharma-blue"
+      color: "bg-pharma-blue/80"
     },
     {
       icon: Target,
@@ -70,7 +45,7 @@ export default function About() {
       icon: Users,
       title: "Community Impact",
       description: "Building healthier communities through accessible, affordable organic healthcare.",
-      color: "bg-accent-orange"
+      color: "bg-accent-orange/80"
     },
     {
       icon: Globe,
@@ -82,49 +57,37 @@ export default function About() {
 
   const teamMembers = [
     {
-      name: "Dr. Rajesh Kumar",
-      position: "Founder & CEO",
-      description: "20+ years in pharmaceutical industry with expertise in organic medicine research.",
+      name: "Mr. Dipanshu Tiwari",
+      position: "Co-Founder",
+      description: "Experienced Microbiologist and QC chemist, with Masters in Organic Chemistry",
       image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop&crop=face"
     },
     {
-      name: "Dr. Priya Sharma",
-      position: "Chief Scientific Officer",
-      description: "Leading researcher in Ayurvedic medicine with 15+ years of experience.",
+      name: "Mr. Kuldeep Yadav",
+      position: "Co-Founder",
+      description: "Experienced Quality Analysis Chemist",
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face"
     },
-    {
-      name: "Amit Patel",
-      position: "Head of Operations",
-      description: "Expert in pharmaceutical manufacturing and quality assurance processes.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
-    },
-    {
-      name: "Dr. Sunita Reddy",
-      position: "Director of Research",
-      description: "Pioneer in organic pharmaceutical formulations and clinical research.",
-      image: "https://images.unsplash.com/photo-1594824388092-d04c3c45ab50?w=300&h=300&fit=crop&crop=face"
-    }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-blue-50">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-organic-green to-pharma-blue text-white">
+      <section className="py-16 bg-gradient-to-r from-organic-green/80 to-pharma-blue/80 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6" data-testid="text-about-title">
             About Lauremed Organic India
           </h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed" data-testid="text-about-subtitle">
-            Leading the transformation in organic pharmaceutical solutions since 2019, committed to bringing natural wellness to every corner of India and beyond.
+            Aiming to lead the transformation in organic pharmaceutical solutions since 2025, committed to bringing wellness to every corner of India and beyond.
           </p>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -142,7 +105,7 @@ export default function About() {
                   Our Mission
                 </h2>
                 <p className="text-gray-600 leading-relaxed" data-testid="text-mission-description">
-                  To revolutionize healthcare by providing safe, effective, and accessible organic pharmaceutical solutions that harness the power of nature. We are committed to improving lives through sustainable medicine that respects both human health and environmental wellbeing.
+                  To revolutionize healthcare by providing safe, effective, and accessible organic pharmaceutical solutions effeciently. We are committed to improving lives through sustainable medicine that respects both human health and environmental wellbeing.
                 </p>
               </div>
               
@@ -151,7 +114,7 @@ export default function About() {
                   Our Vision
                 </h2>
                 <p className="text-gray-600 leading-relaxed" data-testid="text-vision-description">
-                  To become the world's most trusted organic pharmaceutical company, setting new standards for natural healthcare solutions and making organic medicine the first choice for healthcare professionals and patients globally.
+                  To become the world's most trusted pharmaceutical company, setting new standards for healthcare solutions and making organic medicine the first choice for healthcare professionals and patients globally.
                 </p>
               </div>
             </div>
@@ -160,7 +123,7 @@ export default function About() {
       </section>
 
       {/* Company Values */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-pink-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-values-title">
@@ -192,7 +155,7 @@ export default function About() {
       </section>
 
       {/* Company Timeline */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-green">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-timeline-title">
@@ -214,7 +177,7 @@ export default function About() {
                     {index % 2 === 0 ? (
                       <Card className="hover:shadow-md transition-shadow">
                         <CardContent className="p-6">
-                          <Badge className="mb-3 bg-organic-green text-white" data-testid={`badge-year-${index}`}>{milestone.year}</Badge>
+                          <Badge className="mb-3 bg-organic-green/80 text-white" data-testid={`badge-year-${index}`}>{milestone.year}</Badge>
                           <h3 className="text-xl font-semibold text-gray-800 mb-3" data-testid={`text-milestone-title-${index}`}>
                             {milestone.title}
                           </h3>
@@ -227,13 +190,13 @@ export default function About() {
                   </div>
                   
                   {/* Timeline Dot */}
-                  <div className="w-4 h-4 bg-organic-green rounded-full border-4 border-white shadow-md flex-shrink-0 z-10"></div>
+                  <div className="w-4 h-4 bg-organic-green/80 rounded-full border-4 border-white shadow-md flex-shrink-0 z-10"></div>
                   
                   <div className="flex-1 lg:text-left lg:pl-8 lg:pr-0 pr-8">
                     {index % 2 === 1 ? (
                       <Card className="hover:shadow-md transition-shadow">
                         <CardContent className="p-6">
-                          <Badge className="mb-3 bg-organic-green text-white" data-testid={`badge-year-${index}`}>{milestone.year}</Badge>
+                          <Badge className="mb-3 bg-organic-green/80 text-white" data-testid={`badge-year-${index}`}>{milestone.year}</Badge>
                           <h3 className="text-xl font-semibold text-gray-800 mb-3" data-testid={`text-milestone-title-${index}`}>
                             {milestone.title}
                           </h3>
@@ -252,7 +215,7 @@ export default function About() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-green-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-leadership-title">
@@ -263,7 +226,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {teamMembers.map((member, index) => (
               <Card key={index} className="group hover:shadow-lg transition-shadow text-center" data-testid={`card-team-member-${index}`}>
                 <CardContent className="p-6">
@@ -278,7 +241,7 @@ export default function About() {
                   <h3 className="text-xl font-semibold text-gray-800 mb-2" data-testid={`text-member-name-${index}`}>
                     {member.name}
                   </h3>
-                  <p className="text-organic-green font-medium mb-3" data-testid={`text-member-position-${index}`}>
+                  <p className="text-organic-green/80 font-medium mb-3" data-testid={`text-member-position-${index}`}>
                     {member.position}
                   </p>
                   <p className="text-gray-600 text-sm" data-testid={`text-member-description-${index}`}>
@@ -292,7 +255,7 @@ export default function About() {
       </section>
 
       {/* Statistics */}
-      <section className="py-16 bg-gradient-to-r from-organic-green to-pharma-blue text-white">
+      <section className="py-16 bg-gradient-to-r from-organic-green/80 to-pharma-blue/80 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4" data-testid="text-stats-title">
@@ -337,7 +300,7 @@ export default function About() {
       </section>
 
       {/* Quality & Certifications */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-blue">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-quality-title">
@@ -351,7 +314,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <Shield className="w-16 h-16 text-organic-green mx-auto mb-4" />
+                <Shield className="w-16 h-16 text-organic-green/80 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-800 mb-3" data-testid="text-quality-assurance">
                   Quality Assurance
                 </h3>
@@ -363,7 +326,7 @@ export default function About() {
 
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <Award className="w-16 h-16 text-pharma-blue mx-auto mb-4" />
+                <Award className="w-16 h-16 text-pharma-blue/80 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-800 mb-3" data-testid="text-international-standards">
                   International Standards
                 </h3>
@@ -394,7 +357,7 @@ export default function About() {
               {certifications.map((cert, index) => (
                 <Badge 
                   key={index} 
-                  className="bg-gray-100 text-gray-800 px-6 py-3 text-base font-semibold hover:bg-organic-green hover:text-white transition-colors"
+                  className="bg-gray-100 text-gray-800 px-6 py-3 text-base font-semibold hover:bg-organic-green/80 hover:text-white transition-colors"
                   data-testid={`badge-about-certification-${index}`}
                 >
                   {cert}
@@ -406,16 +369,16 @@ export default function About() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6" data-testid="text-cta-title">
             Ready to Experience Organic Excellence?
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto" data-testid="text-cta-description">
-            Discover our comprehensive range of organic pharmaceutical products and join millions of satisfied customers who trust Lauremed for their healthcare needs.
+            Discover our comprehensive range of organic pharmaceutical products and become one of our satisfied customers who trust Lauremed for their healthcare needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-organic-green hover:bg-organic-dark" data-testid="button-explore-products">
+            <Button asChild size="lg" className="bg-organic-green/70 hover:bg-organic-dark/80" data-testid="button-explore-products">
               <Link href="/products">Explore Our Products</Link>
             </Button>
             <Button asChild variant="outline" size="lg" data-testid="button-contact-us">
