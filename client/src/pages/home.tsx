@@ -101,19 +101,20 @@ export default function Home() {
       </section>
 
       {/* About Company */}
-      <section className="py-16 bg-green-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src={premiumPhoto}
-                alt="Lauremed Organic India facility and operations"
-                className="rounded-xl w-full h-auto"
-                data-testid="img-about-company"
-              />
-            </div>
+      <section className="bg-green-50">
+        <div className="flex">
+          {/* Left Image - Half width, full height, no margin */}
+          <div className="w-1/2">
+            <img
+              src={premiumPhoto}
+              alt="Lauremed Organic India facility and operations"
+              className="w-full h-fit object-cover"
+              data-testid="img-about-company"
+            />
+          </div>
 
-            <div className="space-y-6">
+          {/* Right Content - Half width */}
+          <div className="w-1/2 py-16 px-8 lg:px-12 space-y-6">
               <p
                 className="text-organic-green/80 font-semibold mb-2"
                 data-testid="text-welcome"
@@ -168,7 +169,6 @@ export default function Home() {
                 <Link href="/about">Know More About Us</Link>
               </Button>
             </div>
-          </div>
         </div>
       </section>
 
