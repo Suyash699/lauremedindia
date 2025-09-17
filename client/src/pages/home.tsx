@@ -108,13 +108,13 @@ export default function Home() {
             <img
               src={premiumPhoto}
               alt="Lauremed Organic India facility and operations"
-              className="w-full h-3/5 object-cover"
+              className="w-full h-full object-cover"
               data-testid="img-about-company"
             />
           </div>
 
           {/* Right Content - Half width */}
-          <div className="w-1/2 py-16 px-8 lg:px-12 space-y-6">
+          <div className="w-1/2 py-12 px-8 lg:px-12 space-y-6">
               <p
                 className="text-organic-green/80 font-semibold mb-2"
                 data-testid="text-welcome"
