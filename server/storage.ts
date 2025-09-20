@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Product, type InsertProduct, type Category, type InsertCategory, type Specialty, type InsertSpecialty, type CartItem, type InsertCartItem, type about } from "@shared/schema";
+import { type User, type InsertUser, type Product, type InsertProduct, type Category, type InsertCategory, type Specialty, type InsertSpecialty, type CartItem, type InsertCartItem } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -110,7 +110,7 @@ export class MemStorage implements IStorage {
         category: "Digestive Care",
         specialty: "Gastro Care",
         imageUrl: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop",
-        about: "Herbal Digestive Tea is a natural remedy designed to support digestive health and provide relief from common digestive issues. This tea is made from a blend of organic herbs and spices, offering a gentle and effective way to maintain a healthy digestive system
+        about: "Herbal Digestive Tea is a natural remedy designed to support digestive health and provide relief from common digestive issues. This tea is made from a blend of organic herbs and spices, offering a gentle and effective way to maintain a healthy digestive system.",
         inStock: true,
         isOrganic: true,
       },
@@ -121,7 +121,7 @@ export class MemStorage implements IStorage {
         category: "Organic Prenatal Care",
         specialty: "Gynaecology Care",
         imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop",
-        about: "Prenatal Vitamin is a specialized supplement designed to support the nutritional needs of expecting mothers. This product contains a comprehensive blend of vitamins and minerals, ensuring that both mother and baby receive the essential nutrients required for a healthy pregnancy."
+        about: "Prenatal Vitamin is a specialized supplement designed to support the nutritional needs of expecting mothers. This product contains a comprehensive blend of vitamins and minerals, ensuring that both mother and baby receive the essential nutrients required for a healthy pregnancy.",
         inStock: true,
         isOrganic: true,
       },
@@ -132,7 +132,7 @@ export class MemStorage implements IStorage {
         category: "Vitamin D Management",
         specialty: "Nutrition Care",
         imageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-        about: "Vitamin D3 is a essential supplement designed to support bone health and overall well-being. This product contains a comprehensive blend of vitamins and minerals, ensuring that both mother and baby receive the essential nutrients required for a healthy pregnancy."
+        about: "Vitamin D3 is a essential supplement designed to support bone health and overall well-being. This product contains a comprehensive blend of vitamins and minerals, ensuring that both mother and baby receive the essential nutrients required for a healthy pregnancy.",
         inStock: true,
         isOrganic: true,
       },
@@ -193,7 +193,7 @@ export class MemStorage implements IStorage {
       imageUrl: insertProduct.imageUrl || null,
       inStock: insertProduct.inStock ?? true,
       isOrganic: insertProduct.isOrganic ?? true,
-      about: product.about,
+      about: insertProduct.about || null,
       createdAt: new Date() 
     };
     this.products.set(id, product);
