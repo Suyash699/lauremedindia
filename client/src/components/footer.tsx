@@ -33,7 +33,7 @@ export default function Footer() {
                 data-testid="button-social-facebook"
               >
                 <a 
-                  href="https://facebook.com/lauremedorganic" 
+                  href="https://www.facebook.com/share/17ZbdxhFLE/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Follow us on Facebook"
@@ -48,7 +48,7 @@ export default function Footer() {
                 data-testid="button-social-twitter"
               >
                 <a 
-                  href="https://twitter.com/lauremedorganic" 
+                  href="https://x.com/LauremedOrganic" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Follow us on Twitter"
@@ -63,7 +63,7 @@ export default function Footer() {
                 data-testid="button-social-linkedin"
               >
                 <a 
-                  href="https://linkedin.com/company/lauremed-organic-india" 
+                  href="https://www.linkedin.com/in/lauremed-organic-481410383" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Follow us on LinkedIn"
@@ -78,7 +78,7 @@ export default function Footer() {
                 data-testid="button-social-instagram"
               >
                 <a 
-                  href="https://instagram.com/lauremedorganic" 
+                  href="https://www.instagram.com/lauremedorganic" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="Follow us on Instagram"

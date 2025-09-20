@@ -11,9 +11,7 @@ export const companyStats = {
 export const certifications = [
   "WHO GMP",
   "FDA", 
-  "ISO 9001:2015",
-  "ORGANIC INDIA",
-  "AYUSH"
+  "ISO 9001:2015
 ];
 
 export const navigationItems = [
