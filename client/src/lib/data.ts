@@ -8,11 +8,7 @@ export const companyStats = {
   industries: "25+",
 };
 
-export const certifications = [
-  "WHO GMP",
-  "FDA", 
-  "ISO 9001:2015
-];
+export const certifications = ["WHO GMP", "FDA", "ISO 9001:2015"];
 
 export const navigationItems = [
   { name: "Home", href: "/" },
@@ -23,31 +19,35 @@ export const navigationItems = [
 
 export const heroTaglines = [
   "HEALTH & WELLNESS",
-  "COMPLETE HEALING", 
+  "COMPLETE HEALING",
   "PATIENT FOCUSED",
   "QUALITY FIRST",
-  "HEALTH TRANSFORMATION"
+  "HEALTH TRANSFORMATION",
 ];
 
 export const companyValues = [
   {
     icon: "shield-alt",
     title: "Reliable",
-    description: "All products displayed on Lauremed website are procured from verified organic sources and thoroughly tested."
+    description:
+      "All products displayed on Lauremed website are procured from verified organic sources and thoroughly tested.",
   },
   {
     icon: "lock",
-    title: "Secure", 
-    description: "Lauremed uses Secure Sockets Layer (SSL) 128-bit encryption for all transactions and data protection."
+    title: "Secure",
+    description:
+      "Lauremed uses Secure Sockets Layer (SSL) 128-bit encryption for all transactions and data protection.",
   },
   {
     icon: "dollar-sign",
     title: "Affordable",
-    description: "Discover cost-effective organic medicine alternatives and exclusive natural products at the lowest prices."
+    description:
+      "Discover cost-effective organic medicine alternatives and exclusive natural products at the lowest prices.",
   },
   {
     icon: "award",
     title: "Commitment to Quality",
-    description: "Lauremed's Unwavering Commitment to Providing Quality Organic Medicine and Natural Healthcare Solutions."
-  }
+    description:
+      "Lauremed's Unwavering Commitment to Providing Quality Organic Medicine and Natural Healthcare Solutions.",
+  },
 ];
