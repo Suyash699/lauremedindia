@@ -104,14 +104,14 @@ export default function Footer() {
                 </Link>
               ))}
               <Link
-                href="/quality"
+                href="/#quality-section"
                 className="block text-gray-300 hover:text-organic-green/80 transition-colors text-sm sm:text-base"
                 data-testid="link-footer-quality"
               >
                 Quality Assurance
               </Link>
               <Link
-                href="/certifications"
+                href="/#quality-section"
                 className="block text-gray-300 hover:text-organic-green/80 transition-colors text-sm sm:text-base"
                 data-testid="link-footer-certifications"
               >
