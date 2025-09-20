@@ -16,7 +16,24 @@ function ScrollToTop() {
   const [location] = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Check if the location has an anchor hash
+    const hash = location.split('#')[1];
+    
+    if (hash) {
+      // If there's a hash, scroll to that element after a brief delay
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    } else {
+      // If no hash, scroll to top as usual
+      window.scrollTo(0, 0);
+    }
   }, [location]);
 
   return null;
