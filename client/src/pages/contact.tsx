@@ -82,8 +82,7 @@ export default function Contact() {
       icon: Mail,
       title: "Email",
       details: [
-        "info@lauremedorganic.com",
-        "support@lauremedorganic.com"
+        "lauremedorganic@gmail.com",
       ],
       color: "text-accent-orange/80"
     },
@@ -103,21 +102,21 @@ export default function Contact() {
       icon: Users,
       title: "Customer Support",
       description: "General inquiries and product support",
-      email: "support@lauremedorganic.com",
+      email: "lauremedorganic@gmail.com",
       phone: "+91 7400077781"
     },
     {
       icon: Building,
       title: "Business Partnership",
       description: "Distribution and partnership opportunities",
-      email: "business@lauremedorganic.com",
+      email: "lauremedorganic@gmail.com",
       phone: "+91 7400077781"
     },
     {
       icon: HelpCircle,
       title: "Technical Support",
       description: "Product information and technical queries",
-      email: "technical@lauremedorganic.com",
+      email: "lauremedorganic@gmail.com",
       phone: "+91 7400077781"
     }
   ];

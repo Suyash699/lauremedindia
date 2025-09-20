@@ -109,11 +109,11 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-organic-green/80 flex-shrink-0" />
                 <a 
-                  href="mailto:info@lauremedorganic.com" 
+                  href="lauremedorganic@gmail.com" 
                   className="text-gray-300 hover:text-organic-green/80 transition-colors text-sm sm:text-base break-all"
                   data-testid="link-email-footer"
                 >
-                  info@lauremedorganic.com
+                  lauremedorganic@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
