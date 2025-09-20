@@ -18,12 +18,16 @@ export default function Home() {
     queryKey: ["/api/categories"],
   });
 
-  const { data: specialties } = useQuery<Specialty[]>({
+  const { data: specialties, isLoading: specialtiesLoading } = useQuery<Specialty[]>({
     queryKey: ["/api/specialties"],
   });
 
   const featuredProducts = products?.slice(0, 3) || [];
   const companySpecialties = specialties?.slice(0, 10) || [];
+
+  // Debug logging
+  console.log("Specialties data:", specialties);
+  console.log("Company specialties:", companySpecialties);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -143,11 +147,29 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
-            {companySpecialties.map((specialty) => (
-              <SpecialtyCard key={specialty.id} specialty={specialty} />
-            ))}
-          </div>
+          {specialtiesLoading ? (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
+              {Array.from({ length: 10 }).map((_, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg p-4 animate-pulse"
+                >
+                  <div className="aspect-[4/3] bg-gray-200 rounded-lg mb-4"></div>
+                  <div className="h-4 bg-gray-200 rounded"></div>
+                </div>
+              ))}
+            </div>
+          ) : companySpecialties.length > 0 ? (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
+              {companySpecialties.map((specialty) => (
+                <SpecialtyCard key={specialty.id} specialty={specialty} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8">
+              <p className="text-gray-600">No specialties available at the moment.</p>
+            </div>
+          )}
         </div>
       </section>
 
