@@ -29,30 +29,62 @@ export default function Footer() {
               <Button 
                 size="sm" 
                 className="bg-organic-green/80 hover:bg-organic-dark/80 p-2 sm:p-3 rounded-full"
+                asChild
                 data-testid="button-social-facebook"
               >
-                <Facebook className="w-3 h-3 sm:w-4 sm:h-4" />
+                <a 
+                  href="https://facebook.com/lauremedorganic" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Facebook"
+                >
+                  <Facebook className="w-3 h-3 sm:w-4 sm:h-4" />
+                </a>
               </Button>
               <Button 
                 size="sm" 
                 className="bg-organic-green/80 hover:bg-organic-dark/80 p-2 sm:p-3 rounded-full"
+                asChild
                 data-testid="button-social-twitter"
               >
-                <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
+                <a 
+                  href="https://twitter.com/lauremedorganic" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Twitter"
+                >
+                  <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
+                </a>
               </Button>
               <Button 
                 size="sm" 
                 className="bg-organic-green/80 hover:bg-organic-dark/80 p-2 sm:p-3 rounded-full"
+                asChild
                 data-testid="button-social-linkedin"
               >
-                <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
+                <a 
+                  href="https://linkedin.com/company/lauremed-organic-india" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on LinkedIn"
+                >
+                  <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
+                </a>
               </Button>
               <Button 
                 size="sm" 
                 className="bg-organic-green/80 hover:bg-organic-dark/80 p-2 sm:p-3 rounded-full"
+                asChild
                 data-testid="button-social-instagram"
               >
-                <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
+                <a 
+                  href="https://instagram.com/lauremedorganic" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
+                </a>
               </Button>
             </div>
           </div>
