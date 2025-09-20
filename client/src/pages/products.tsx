@@ -6,7 +6,13 @@ import Footer from "@/components/footer";
 import ProductCard from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Search, Filter, X } from "lucide-react";
 import { type Product, type Category, type Specialty } from "@shared/schema";
@@ -19,10 +25,10 @@ export default function Products() {
   const [sortBy, setSortBy] = useState<string>("name");
 
   // Parse URL parameters
-  const urlParams = new URLSearchParams(location.split('?')[1] || '');
-  const urlSearch = urlParams.get('search') || '';
-  const urlCategory = urlParams.get('category') || '';
-  const urlSpecialty = urlParams.get('specialty') || '';
+  const urlParams = new URLSearchParams(location.split("?")[1] || "");
+  const urlSearch = urlParams.get("search") || "";
+  const urlCategory = urlParams.get("category") || "";
+  const urlSpecialty = urlParams.get("specialty") || "";
 
   // Set initial filters from URL
   useState(() => {
@@ -47,12 +53,15 @@ export default function Products() {
     if (!products) return [];
 
     let filtered = products.filter((product) => {
-      const matchesSearch = !searchQuery || 
+      const matchesSearch =
+        !searchQuery ||
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.description.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      const matchesCategory = !selectedCategory || product.category === selectedCategory;
-      const matchesSpecialty = !selectedSpecialty || product.specialty === selectedSpecialty;
+
+      const matchesCategory =
+        !selectedCategory || product.category === selectedCategory;
+      const matchesSpecialty =
+        !selectedSpecialty || product.specialty === selectedSpecialty;
 
       return matchesSearch && matchesCategory && matchesSpecialty;
     });
@@ -60,14 +69,17 @@ export default function Products() {
     // Sort products
     filtered.sort((a, b) => {
       switch (sortBy) {
-        case 'name':
+        case "name":
           return a.name.localeCompare(b.name);
-        case 'price-low':
+        case "price-low":
           return parseFloat(a.price) - parseFloat(b.price);
-        case 'price-high':
+        case "price-high":
           return parseFloat(b.price) - parseFloat(a.price);
-        case 'newest':
-          return new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime();
+        case "newest":
+          return (
+            new Date(b.createdAt || 0).getTime() -
+            new Date(a.createdAt || 0).getTime()
+          );
         default:
           return 0;
       }
@@ -81,7 +93,7 @@ export default function Products() {
     setSelectedCategory("");
     setSelectedSpecialty("");
     setSortBy("name");
-    window.history.pushState({}, '', '/products');
+    window.history.pushState({}, "", "/products");
   };
 
   const hasActiveFilters = searchQuery || selectedCategory || selectedSpecialty;
@@ -89,15 +101,22 @@ export default function Products() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4" data-testid="text-products-title">
-            Organic Products
+          <h1
+            className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
+            data-testid="text-products-title"
+          >
+            Our Products
           </h1>
-          <p className="text-gray-600 max-w-2xl" data-testid="text-products-description">
-            Discover our comprehensive range of organic pharmaceutical products, carefully crafted for optimal health and wellness.
+          <p
+            className="text-gray-600 max-w-2xl"
+            data-testid="text-products-description"
+          >
+            Discover our comprehensive range of pharmaceutical products,
+            carefully crafted for optimal health and wellness.
           </p>
         </div>
 
@@ -118,28 +137,21 @@ export default function Products() {
             </div>
 
             {/* Category Filter */}
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <Select
+              value={selectedCategory}
+              onValueChange={setSelectedCategory}
+            >
               <SelectTrigger data-testid="select-category-filter">
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
                 {categories?.map((category) => (
-                  <SelectItem key={category.id} value={category.name} data-testid={`option-category-${category.id}`}>
+                  <SelectItem
+                    key={category.id}
+                    value={category.name}
+                    data-testid={`option-category-${category.id}`}
+                  >
                     {category.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            {/* Specialty Filter */}
-            <Select value={selectedSpecialty} onValueChange={setSelectedSpecialty}>
-              <SelectTrigger data-testid="select-specialty-filter">
-                <SelectValue placeholder="All Specialties" />
-              </SelectTrigger>
-              <SelectContent>
-                {specialties?.map((specialty) => (
-                  <SelectItem key={specialty.id} value={specialty.name} data-testid={`option-specialty-${specialty.id}`}>
-                    {specialty.name}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -164,11 +176,15 @@ export default function Products() {
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-sm text-gray-600">Active filters:</span>
               {searchQuery && (
-                <Badge variant="secondary" className="flex items-center gap-1" data-testid="badge-filter-search">
+                <Badge
+                  variant="secondary"
+                  className="flex items-center gap-1"
+                  data-testid="badge-filter-search"
+                >
                   Search: {searchQuery}
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     className="h-4 w-4 p-0 hover:bg-transparent"
                     onClick={() => setSearchQuery("")}
                     data-testid="button-clear-search"
@@ -178,11 +194,15 @@ export default function Products() {
                 </Badge>
               )}
               {selectedCategory && (
-                <Badge variant="secondary" className="flex items-center gap-1" data-testid="badge-filter-category">
+                <Badge
+                  variant="secondary"
+                  className="flex items-center gap-1"
+                  data-testid="badge-filter-category"
+                >
                   Category: {selectedCategory}
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     className="h-4 w-4 p-0 hover:bg-transparent"
                     onClick={() => setSelectedCategory("")}
                     data-testid="button-clear-category"
@@ -192,11 +212,15 @@ export default function Products() {
                 </Badge>
               )}
               {selectedSpecialty && (
-                <Badge variant="secondary" className="flex items-center gap-1" data-testid="badge-filter-specialty">
+                <Badge
+                  variant="secondary"
+                  className="flex items-center gap-1"
+                  data-testid="badge-filter-specialty"
+                >
                   Specialty: {selectedSpecialty}
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     className="h-4 w-4 p-0 hover:bg-transparent"
                     onClick={() => setSelectedSpecialty("")}
                     data-testid="button-clear-specialty"
@@ -205,8 +229,8 @@ export default function Products() {
                   </Button>
                 </Badge>
               )}
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 onClick={clearFilters}
                 data-testid="button-clear-all-filters"
@@ -228,7 +252,11 @@ export default function Products() {
         {productsLoading ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {Array.from({ length: 8 }).map((_, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 animate-pulse" data-testid={`skeleton-product-${index}`}>
+              <div
+                key={index}
+                className="bg-white rounded-lg p-4 animate-pulse"
+                data-testid={`skeleton-product-${index}`}
+              >
                 <div className="aspect-square bg-gray-200 rounded-lg mb-4"></div>
                 <div className="h-4 bg-gray-200 rounded mb-2"></div>
                 <div className="h-3 bg-gray-200 rounded mb-4"></div>
@@ -245,9 +273,12 @@ export default function Products() {
         ) : (
           <div className="text-center py-12" data-testid="text-no-products">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">No products found</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              No products found
+            </h3>
             <p className="text-gray-600 mb-4">
-              We couldn't find any products matching your criteria. Try adjusting your filters.
+              We couldn't find any products matching your criteria. Try
+              adjusting your filters.
             </p>
             <Button onClick={clearFilters} data-testid="button-reset-filters">
               Reset Filters

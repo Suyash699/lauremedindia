@@ -3,14 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { heroTaglines } from "@/lib/data";
 import { useLocation } from "wouter";
+import pills from "@assets/pills.png";
 
 const badgeDetails = {
   "badge-high-quality": "High Quality Production",
   "badge-fastest-growing": "Fastest Growing Organic Pharma",
   "badge-patient-focused": "Patient Focused",
   "badge-quality-first": "Quality First",
-  "badge-organic": "100% Organic"
-}
+  "badge-organic": "100% Organic",
+};
 
 export default function HeroSection() {
   const [, setLocation] = useLocation();
@@ -18,15 +19,6 @@ export default function HeroSection() {
   const [displayedText, setDisplayedText] = useState("");
   const [charIndex, setCharIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentTaglineIndex((prevIndex) => 
-  //       (prevIndex + 1) % heroTaglines.length
-  //     );
-  //   }, 3000);
-  //   return () => clearInterval(interval);
-  // }, []);
-  
   useEffect(() => {
     const currentTagline = heroTaglines[currentTaglineIndex];
 
@@ -60,12 +52,12 @@ export default function HeroSection() {
     <section className="relative bg-gradient-to-r from-organic-green/50 to-pharma-blue/50 text-white min-h-[60vh] sm:min-h-[70vh] lg:h-3/5">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-1">
-        <div 
-          className="absolute inset-0" 
+        <div
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url("https://plus.unsplash.com/premium_photo-1671721439325-d79f4bdd30ca?q=80&w=1863&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+            backgroundImage: `url(${pills})`,
             backgroundSize: "cover",
-            backgroundPosition: "center"
+            backgroundPosition: "center",
           }}
         ></div>
       </div>
@@ -73,48 +65,56 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
-            <p className="text-sm sm:text-lg font-medium opacity-90" data-testid="text-hero-subtitle">
-              Leading the Way in Health Transformation Worldwide
+            <p
+              className="text-sm sm:text-lg font-medium opacity-90"
+              data-testid="text-hero-subtitle"
+            >
+              Shaping the Future of Health Transformation Globally
             </p>
-            
+
             {/* Rotating Taglines */}
             <div className="h-12 sm:h-15 flex items-center justify-center lg:justify-start">
-              <h1
-                className="text-2xl sm:text-4xl lg:text-5xl font-bold flex items-center"
-              >
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold flex items-center">
                 {displayedText}
               </h1>
             </div>
 
             <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm font-medium justify-center lg:justify-start">
-              <Badge variant="secondary" className="bg-white/20 text-white px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/30" data-testid="badge-high-quality">
-                <span className="hidden sm:inline">High Quality Production</span>
+              <Badge
+                variant="secondary"
+                className="bg-white/20 text-white px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/30"
+                data-testid="badge-high-quality"
+              >
+                <span className="hidden sm:inline">
+                  High Quality Production
+                </span>
                 <span className="sm:hidden">High Quality</span>
               </Badge>
-              <Badge variant="secondary" className="bg-white/20 text-white px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/30" data-testid="badge-fastest-growing">
-                <span className="hidden sm:inline">Fastest Growing Organic Pharma</span>
-                <span className="sm:hidden">Fastest Growing</span>
-              </Badge>
-              <Badge variant="secondary" className="bg-white/20 text-white px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/30" data-testid="badge-patient-focused">
+              <Badge
+                variant="secondary"
+                className="bg-white/20 text-white px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/30"
+                data-testid="badge-patient-focused"
+              >
                 Patient Focused
               </Badge>
-              <Badge variant="secondary" className="bg-white/20 text-white px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/30" data-testid="badge-quality-first">
+              <Badge
+                variant="secondary"
+                className="bg-white/20 text-white px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/30"
+                data-testid="badge-quality-first"
+              >
                 Quality First
-              </Badge>
-              <Badge variant="secondary" className="bg-white/20 text-white px-2 py-1 sm:px-4 sm:py-2 hover:bg-white/30" data-testid="badge-organic">
-                100% Organic
               </Badge>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 items-center">
-              <Button 
+              <Button
                 onClick={handleExploreProducts}
                 className="w-full sm:w-auto bg-white text-organic-green/80 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 data-testid="button-explore-products"
               >
                 Explore Products
               </Button>
-              <Button 
+              <Button
                 variant="outline"
                 onClick={handleContactUs}
                 className="w-full sm:w-auto border-2 border-white text-black px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-organic-green/80 transition-colors"
@@ -135,7 +135,9 @@ export default function HeroSection() {
                       <span className="text-xl sm:text-2xl">💊</span>
                     </div>
                   </div>
-                  <p className="text-xs sm:text-sm mt-2 text-center font-medium">Organic Supplements</p>
+                  <p className="text-xs sm:text-sm mt-2 text-center font-medium">
+                    Quality Supplements
+                  </p>
                 </div>
               </div>
               <div className="space-y-3 sm:space-y-4 mt-4 sm:mt-8">
@@ -145,7 +147,9 @@ export default function HeroSection() {
                       <span className="text-xl sm:text-2xl">🧪</span>
                     </div>
                   </div>
-                  <p className="text-xs sm:text-sm mt-2 text-center font-medium">Natural Remedies</p>
+                  <p className="text-xs sm:text-sm mt-2 text-center font-medium">
+                    Effective Remedies
+                  </p>
                 </div>
               </div>
             </div>

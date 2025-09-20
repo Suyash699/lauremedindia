@@ -17,6 +17,7 @@ export const products = pgTable("products", {
   category: text("category").notNull(),
   specialty: text("specialty"),
   imageUrl: text("image_url"),
+  about: text("about"),
   inStock: boolean("in_stock").default(true),
   isOrganic: boolean("is_organic").default(true),
   createdAt: timestamp("created_at").default(sql`now()`),

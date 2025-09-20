@@ -2,14 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
-import StatsSection from "@/components/stats-section";
 import ProductCard from "@/components/product-card";
-import CategoryCard from "@/components/category-card";
 import SpecialtyCard from "@/components/specialty-card";
 import { Button } from "@/components/ui/button";
-import { Shield, Lock, DollarSign, Award } from "lucide-react";
 import { Link } from "wouter";
-import { companyValues, companyStats } from "@/lib/data";
 import { type Product, type Category, type Specialty } from "@shared/schema";
 import premiumPhoto from "@assets/premium_photo.png";
 
@@ -27,38 +23,7 @@ export default function Home() {
   });
 
   const featuredProducts = products?.slice(0, 3) || [];
-  const popularCategories = categories?.slice(0, 8) || [];
   const companySpecialties = specialties?.slice(0, 10) || [];
-
-  const getValueIcon = (iconName: string) => {
-    switch (iconName) {
-      case "shield-alt":
-        return <Shield className="w-6 h-6 text-white" />;
-      case "lock":
-        return <Lock className="w-6 h-6 text-white" />;
-      case "dollar-sign":
-        return <DollarSign className="w-6 h-6 text-white" />;
-      case "award":
-        return <Award className="w-6 h-6 text-white" />;
-      default:
-        return <Shield className="w-6 h-6 text-white" />;
-    }
-  };
-
-  const getValueColor = (iconName: string) => {
-    switch (iconName) {
-      case "shield-alt":
-        return "bg-organic-green";
-      case "lock":
-        return "bg-pharma-blue";
-      case "dollar-sign":
-        return "bg-accent-orange";
-      case "award":
-        return "bg-green-600";
-      default:
-        return "bg-organic-green";
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -83,17 +48,13 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center items-center space-x-8 overflow-x-auto pb-4">
-            {["WHO", "GMP", "FDA", "ISO", "ORGANIC", "AYUSH"].map((cert) => (
+            {["WHO", "GMP", "FDA", "ISO"].map((cert) => (
               <div
                 key={cert}
                 className="flex-shrink-0 w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center border hover:shadow-md transition-shadow"
                 data-testid={`certification-${cert.toLowerCase()}`}
               >
-                <span
-                  className={`text-xs font-bold ${cert === "ORGANIC" ? "text-organic-green/80" : "text-gray-600"}`}
-                >
-                  {cert}
-                </span>
+                <span className="text-xs font-bold text-gray-600">{cert}</span>
               </div>
             ))}
           </div>
@@ -115,60 +76,51 @@ export default function Home() {
 
           {/* Right Content - Full width on mobile, half on desktop */}
           <div className="w-full lg:w-1/2 order-1 lg:order-2 px-4 sm:px-8 lg:px-12 py-8 lg:py-32 space-y-4 lg:space-y-6">
-              <p
-                className="text-organic-green/80 font-semibold mb-2 text-sm sm:text-base"
-                data-testid="text-welcome"
-              >
-                WELCOME TO Lauremed Organic India
-              </p>
-              <h2
-                className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800"
-                data-testid="text-company-title"
-              >
-                Lauremed Aims To Be The Fastest Growing Organic Pharmaceutical
-                Company In India
-              </h2>
+            <p
+              className="text-organic-green/80 font-semibold mb-2 text-sm sm:text-base"
+              data-testid="text-welcome"
+            >
+              WELCOME TO Lauremed Organic India
+            </p>
+            <h2
+              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800"
+              data-testid="text-company-title"
+            >
+              Lauremed Aims To Be The Fastest Growing Pharmaceutical Company In
+              India
+            </h2>
 
-              <p
-                className="text-gray-600 leading-relaxed text-sm sm:text-base"
-                data-testid="text-company-description-1"
-              >
-                Incorporated in 2025, Lauremed Organic India aims to be the
-                fastest growing organic pharmaceutical company in India. We are
-                a patient-focused, values-based, Quality driven pharmaceutical
-                company committed to bringing Better Health and a Brighter
-                Future to people worldwide through organic medicine solutions.
-              </p>
+            <p
+              className="text-gray-600 leading-relaxed text-sm sm:text-base"
+              data-testid="text-company-description-1"
+            >
+              Incorporated in 2025, Lauremed Organic India aims to be the
+              fastest growing pharmaceutical company in India. We are a
+              patient-focused, values-based, Quality driven pharmaceutical
+              company committed to bringing Better Health and a Brighter Future
+              to people worldwide through organic medicine solutions.
+            </p>
 
-              <p
-                className="text-gray-600 leading-relaxed text-sm sm:text-base"
-                data-testid="text-company-description-2"
-              >
-                Our passion and pursuit of potentially life-changing organic
-                treatments for patients by the means of affordability and
-                Quality. Our focus on sustainable, natural medicine makes us a
-                leader in the organic pharmaceutical industry.
-              </p>
+            <p
+              className="text-gray-600 leading-relaxed text-sm sm:text-base"
+              data-testid="text-company-description-2"
+            >
+              Our passion and pursuit of potentially life-changing
+              medicine-based treatments for patients by the means of
+              affordability and Quality. Our focus on sustainable medicines
+              makes us a leader in the pharmaceutical industry.
+            </p>
 
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                {/* <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="text-2xl font-bold text-organic-green/80" data-testid="stat-customers-small">{companyStats.customers}</div>
-                  <div className="text-sm text-gray-600">Satisfied Customers</div>
-                </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="text-2xl font-bold text-organic-green/80" data-testid="stat-products-small">{companyStats.products}</div>
-                  <div className="text-sm text-gray-600">Organic Products</div>
-                </div> */}
-              </div>
+            <div className="grid grid-cols-2 gap-4 pt-4"></div>
 
-              <Button
-                asChild
-                className="bg-organic-green/60 hover:bg-organic-dark/80 w-full sm:w-auto"
-                data-testid="button-know-more"
-              >
-                <Link href="/about">Know More About Us</Link>
-              </Button>
-            </div>
+            <Button
+              asChild
+              className="bg-organic-green/60 hover:bg-organic-dark/80 w-full sm:w-auto"
+              data-testid="button-know-more"
+            >
+              <Link href="/about">Know More About Us</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -180,14 +132,14 @@ export default function Home() {
               className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
               data-testid="text-specialties-title"
             >
-              Organic Specialties We Deal
+              Specialties We Deal
             </h2>
             <p
               className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base"
               data-testid="text-specialties-description"
             >
-              Comprehensive range of organic and natural pharmaceutical
-              solutions across multiple healthcare categories
+              Comprehensive range of pharmaceutical solutions across multiple
+              healthcare categories
             </p>
           </div>
 
@@ -207,13 +159,13 @@ export default function Home() {
               className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
               data-testid="text-featured-products-title"
             >
-              Featured Organic Products
+              Featured Products
             </h2>
             <p
               className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base"
               data-testid="text-featured-products-description"
             >
-              Discover our premium range of organic pharmaceutical products,
+              Discover our premium range of our pharmaceutical products,
               carefully crafted for optimal health and wellness
             </p>
           </div>
@@ -235,35 +187,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Popular Categories */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
-              data-testid="text-popular-categories-title"
-            >
-              Popular Organic Categories
-            </h2>
-            <p
-              className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base"
-              data-testid="text-popular-categories-description"
-            >
-              Browse our most sought-after organic pharmaceutical categories
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-            {popularCategories.map((category) => (
-              <CategoryCard key={category.id} category={category} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Company Statistics */}
-      {/* <StatsSection /> */}
 
       {/* Geographic Presence */}
       <section className="py-8 sm:py-12 lg:py-16 bg-gray-100">

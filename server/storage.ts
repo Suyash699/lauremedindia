@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Product, type InsertProduct, type Category, type InsertCategory, type Specialty, type InsertSpecialty, type CartItem, type InsertCartItem } from "@shared/schema";
+import { type User, type InsertUser, type Product, type InsertProduct, type Category, type InsertCategory, type Specialty, type InsertSpecialty, type CartItem, type InsertCartItem, type about } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -53,14 +53,14 @@ export class MemStorage implements IStorage {
   private initializeData() {
     // Initialize categories
     const categories = [
-      { name: "Organic Prenatal Care", description: "Natural prenatal vitamins and supplements", imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop", productCount: 4 },
-      { name: "Natural Pain Relief", description: "Organic pain management solutions", imageUrl: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=300&fit=crop", productCount: 13 },
-      { name: "Organic Immunity", description: "Natural immunity boosters", imageUrl: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=300&fit=crop", productCount: 8 },
-      { name: "Calcium Management", description: "Natural calcium supplements", imageUrl: "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=400&h=300&fit=crop", productCount: 6 },
-      { name: "Vitamin D Management", description: "Organic vitamin D supplements", imageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop", productCount: 5 },
-      { name: "Natural Skin Care", description: "Organic dermatology products", imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop", productCount: 7 },
-      { name: "Herbal Hair Care", description: "Natural hair care solutions", imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop", productCount: 4 },
-      { name: "Digestive Care", description: "Natural digestive health", imageUrl: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop", productCount: 9 },
+      { name: "Prenatal Care", description: "Prenatal vitamins and supplements", imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop", productCount: 4 },
+      { name: "Pain Relief", description: "Pain management solutions", imageUrl: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=300&fit=crop", productCount: 13 },
+      { name: "Immunity", description: "Immunity boosters", imageUrl: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=300&fit=crop", productCount: 8 },
+      { name: "Calcium Management", description: "Calcium supplements", imageUrl: "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=400&h=300&fit=crop", productCount: 6 },
+      { name: "Vitamin D Management", description: "Vitamin D supplements", imageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop", productCount: 5 },
+      { name: "Skin Care", description: "Dermatology products", imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop", productCount: 7 },
+      { name: "Hair Care", description: "Hair care solutions", imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop", productCount: 4 },
+      { name: "Digestive Care", description: "Digestive health solutions", imageUrl: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop", productCount: 9 },
     ];
 
     categories.forEach(cat => {
@@ -68,84 +68,71 @@ export class MemStorage implements IStorage {
       this.categories.set(id, { ...cat, id });
     });
 
-    // Initialize specialties
-    const specialties = [
-      { name: "Gynaecology Care", description: "Women's health and wellness", imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop" },
-      { name: "Nutrition Care", description: "Organic nutrition supplements", imageUrl: "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=400&h=300&fit=crop" },
-      { name: "Pain Management", description: "Natural pain relief solutions", imageUrl: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=300&fit=crop" },
-      { name: "Respiratory Care", description: "Organic respiratory health", imageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop" },
-      { name: "Natural Antibiotics", description: "Herbal antimicrobial products", imageUrl: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=300&fit=crop" },
-      { name: "Cardiac Care", description: "Heart health supplements", imageUrl: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=400&h=300&fit=crop" },
-      { name: "Dermatology", description: "Natural skin treatments", imageUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop" },
-      { name: "Diabetes Care", description: "Blood sugar management", imageUrl: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop" },
-      { name: "Gastro Care", description: "Digestive health solutions", imageUrl: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop" },
-      { name: "Immunity Care", description: "Natural immunity boosters", imageUrl: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=300&fit=crop" },
-    ];
-
-    specialties.forEach(spec => {
-      const id = randomUUID();
-      this.specialties.set(id, { ...spec, id });
-    });
-
-    // Initialize products
+        // Initialize products
     const products = [
       {
-        name: "Organic Immunity Plus",
-        description: "Natural immunity booster with organic herbs and vitamins",
+        name: "Immunity Plus",
+        description: "Immunity booster with organic herbs and vitamins",
         price: "299.00",
-        category: "Organic Immunity",
+        category: "Immunity",
         specialty: "Immunity Care",
         imageUrl: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=300&fit=crop",
+        about: "Immunity Plus is a comprehensive immunity booster formulated with a blend of formulas and vitamins designed to support your body's natural defense mechanisms. This product is perfect for maintaining overall health and well-being, especially during the changing seasons.",
         inStock: true,
         isOrganic: true,
       },
       {
-        name: "Organic Pain Relief Gel",
-        description: "Fast-acting natural pain relief with organic extracts",
+        name: "Pain Relief Gel",
+        description: "Fast-acting pain relief with lasting effects",
         price: "199.00",
-        category: "Natural Pain Relief",
+        category: "Pain Relief",
         specialty: "Pain Management",
         imageUrl: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=300&fit=crop",
+        about: "Pain Relief Gel is a fast-acting, pain reliever that provides immediate relief from minor aches and pains. Its unique formula ensures lasting effects, making it an ideal choice for quick relief from everyday discomforts.",
         inStock: true,
         isOrganic: true,
       },
       {
-        name: "Organic Multi-Vitamin",
-        description: "Complete nutrition with organic vitamins and minerals",
+        name: "Multi-Vitamin",
+        description: "Complete nutrition with vitamins and minerals",
         price: "449.00",
         category: "Calcium Management",
         specialty: "Nutrition Care",
         imageUrl: "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=400&h=300&fit=crop",
+        about: "Multi-Vitamin is a comprehensive nutritional supplement designed to support overall health and well-being. This product contains a balanced mix of essential vitamins and minerals, ensuring that your body receives the nutrients it needs to function optimally.",
         inStock: true,
         isOrganic: true,
       },
       {
         name: "Herbal Digestive Tea",
-        description: "Natural digestive support with organic herbs",
+        description: "Effective and Fast Digestive support",
         price: "159.00",
         category: "Digestive Care",
         specialty: "Gastro Care",
         imageUrl: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop",
+        about: "Herbal Digestive Tea is a natural remedy designed to support digestive health and provide relief from common digestive issues. This tea is made from a blend of organic herbs and spices, offering a gentle and effective way to maintain a healthy digestive system
         inStock: true,
         isOrganic: true,
       },
       {
-        name: "Organic Prenatal Vitamins",
+        name: "Prenatal Vitamins",
         description: "Complete prenatal nutrition for expecting mothers",
         price: "599.00",
         category: "Organic Prenatal Care",
         specialty: "Gynaecology Care",
         imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop",
+        about: "Prenatal Vitamin is a specialized supplement designed to support the nutritional needs of expecting mothers. This product contains a comprehensive blend of vitamins and minerals, ensuring that both mother and baby receive the essential nutrients required for a healthy pregnancy."
         inStock: true,
         isOrganic: true,
       },
       {
-        name: "Natural Vitamin D3",
-        description: "Organic vitamin D supplement for bone health",
+        name: "Vitamin D3",
+        description: "vitamin D supplement for great bone health",
         price: "299.00",
         category: "Vitamin D Management",
         specialty: "Nutrition Care",
         imageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+        about: "Vitamin D3 is a essential supplement designed to support bone health and overall well-being. This product contains a comprehensive blend of vitamins and minerals, ensuring that both mother and baby receive the essential nutrients required for a healthy pregnancy."
         inStock: true,
         isOrganic: true,
       },
@@ -206,6 +193,7 @@ export class MemStorage implements IStorage {
       imageUrl: insertProduct.imageUrl || null,
       inStock: insertProduct.inStock ?? true,
       isOrganic: insertProduct.isOrganic ?? true,
+      about: product.about,
       createdAt: new Date() 
     };
     this.products.set(id, product);
@@ -264,37 +252,6 @@ export class MemStorage implements IStorage {
     return specialty;
   }
 
-  // Cart methods
-  async getCartItems(userId: string): Promise<CartItem[]> {
-    return Array.from(this.cartItems.values()).filter(item => item.userId === userId);
-  }
-
-  async addToCart(insertItem: InsertCartItem): Promise<CartItem> {
-    const id = randomUUID();
-    const item: CartItem = { 
-      ...insertItem, 
-      id,
-      userId: insertItem.userId || null,
-      productId: insertItem.productId || null,
-      quantity: insertItem.quantity || null
-    };
-    this.cartItems.set(id, item);
-    return item;
-  }
-
-  async updateCartItem(id: string, quantity: number): Promise<CartItem | undefined> {
-    const item = this.cartItems.get(id);
-    if (item) {
-      const updated = { ...item, quantity };
-      this.cartItems.set(id, updated);
-      return updated;
-    }
-    return undefined;
-  }
-
-  async removeFromCart(id: string): Promise<boolean> {
-    return this.cartItems.delete(id);
-  }
 }
 
 export const storage = new MemStorage();

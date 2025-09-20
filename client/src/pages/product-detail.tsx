@@ -6,7 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, Plus, Minus, ShoppingCart, Heart, Share2 } from "lucide-react";
+import {
+  ArrowLeft,
+  Plus,
+  Minus,
+  ShoppingCart,
+  Heart,
+  Share2,
+} from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
 import { useToast } from "@/hooks/use-toast";
@@ -18,12 +25,16 @@ export default function ProductDetail() {
   const { addItem } = useCart();
   const { toast } = useToast();
 
-  const { data: product, isLoading, error } = useQuery<Product>({
+  const {
+    data: product,
+    isLoading,
+    error,
+  } = useQuery<Product>({
     queryKey: ["/api/products", id],
   });
 
   const handleQuantityChange = (delta: number) => {
-    setQuantity(prev => Math.max(1, prev + delta));
+    setQuantity((prev) => Math.max(1, prev + delta));
   };
 
   const handleAddToCart = () => {
@@ -81,9 +92,18 @@ export default function ProductDetail() {
             <CardContent className="pt-6">
               <div className="text-center py-12">
                 <div className="text-6xl mb-4">❌</div>
-                <h1 className="text-2xl font-bold text-gray-800 mb-2" data-testid="text-product-not-found">Product Not Found</h1>
-                <p className="text-gray-600 mb-4" data-testid="text-product-error">
-                  The product you're looking for doesn't exist or has been removed.
+                <h1
+                  className="text-2xl font-bold text-gray-800 mb-2"
+                  data-testid="text-product-not-found"
+                >
+                  Product Not Found
+                </h1>
+                <p
+                  className="text-gray-600 mb-4"
+                  data-testid="text-product-error"
+                >
+                  The product you're looking for doesn't exist or has been
+                  removed.
                 </p>
                 <Button asChild data-testid="button-back-to-products">
                   <Link href="/products">
@@ -103,11 +123,15 @@ export default function ProductDetail() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* Breadcrumb */}
         <div className="mb-6">
-          <Link href="/products" className="inline-flex items-center text-organic-green hover:text-organic-dark transition-colors" data-testid="link-back-to-products">
+          <Link
+            href="/products"
+            className="inline-flex items-center text-organic-green hover:text-organic-dark transition-colors"
+            data-testid="link-back-to-products"
+          >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Products
           </Link>
@@ -118,8 +142,8 @@ export default function ProductDetail() {
           <div className="space-y-4">
             <div className="aspect-square bg-white rounded-xl shadow-sm overflow-hidden">
               {product.imageUrl ? (
-                <img 
-                  src={product.imageUrl} 
+                <img
+                  src={product.imageUrl}
                   alt={product.name}
                   className="w-full h-full object-cover"
                   data-testid={`img-product-detail-${product.id}`}
@@ -134,34 +158,19 @@ export default function ProductDetail() {
 
           {/* Product Info */}
           <div className="space-y-6">
-            {/* Badges */}
-            <div className="flex flex-wrap gap-2">
-              {product.isOrganic && (
-                <Badge className="bg-organic-green/10 text-organic-green border-organic-green" data-testid="badge-organic-detail">
-                  100% Organic
-                </Badge>
-              )}
-              {product.inStock ? (
-                <Badge variant="secondary" className="bg-green-100 text-green-700" data-testid="badge-in-stock-detail">
-                  In Stock
-                </Badge>
-              ) : (
-                <Badge variant="destructive" data-testid="badge-out-of-stock-detail">Out of Stock</Badge>
-              )}
-            </div>
-
             {/* Product Name */}
-            <h1 className="text-3xl lg:text-4xl font-bold text-gray-800" data-testid="text-product-title">
+            <h1
+              className="text-3xl lg:text-4xl font-bold text-gray-800"
+              data-testid="text-product-title"
+            >
               {product.name}
             </h1>
 
-            {/* Price */}
-            <div className="text-3xl font-bold text-organic-green" data-testid="text-product-price-detail">
-              ₹{product.price}
-            </div>
-
             {/* Description */}
-            <p className="text-gray-600 text-lg leading-relaxed" data-testid="text-product-description-detail">
+            <p
+              className="text-gray-600 text-lg leading-relaxed"
+              data-testid="text-product-description-detail"
+            >
               {product.description}
             </p>
 
@@ -172,13 +181,17 @@ export default function ProductDetail() {
               {product.category && (
                 <div className="flex items-center justify-between">
                   <span className="font-medium text-gray-700">Category:</span>
-                  <Badge variant="outline" data-testid="badge-category-detail">{product.category}</Badge>
+                  <Badge variant="outline" data-testid="badge-category-detail">
+                    {product.category}
+                  </Badge>
                 </div>
               )}
               {product.specialty && (
                 <div className="flex items-center justify-between">
                   <span className="font-medium text-gray-700">Specialty:</span>
-                  <Badge variant="outline" data-testid="badge-specialty-detail">{product.specialty}</Badge>
+                  <Badge variant="outline" data-testid="badge-specialty-detail">
+                    {product.specialty}
+                  </Badge>
                 </div>
               )}
             </div>
@@ -187,32 +200,8 @@ export default function ProductDetail() {
 
             {/* Quantity and Add to Cart */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <span className="font-medium text-gray-700">Quantity:</span>
-                <div className="flex items-center border rounded-lg">
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    onClick={() => handleQuantityChange(-1)}
-                    disabled={quantity <= 1}
-                    data-testid="button-decrease-quantity"
-                  >
-                    <Minus className="w-4 h-4" />
-                  </Button>
-                  <span className="px-4 py-2 font-medium" data-testid="text-quantity">{quantity}</span>
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    onClick={() => handleQuantityChange(1)}
-                    data-testid="button-increase-quantity"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
-
               <div className="flex space-x-4">
-                <Button 
+                <Button
                   onClick={handleAddToCart}
                   disabled={!product.inStock}
                   className="flex-1 bg-organic-green hover:bg-organic-dark"
@@ -221,12 +210,21 @@ export default function ProductDetail() {
                   <ShoppingCart className="w-4 h-4 mr-2" />
                   {product.inStock ? `Add ${quantity} to Cart` : "Out of Stock"}
                 </Button>
-                
-                <Button variant="outline" size="icon" data-testid="button-wishlist">
+
+                <Button
+                  variant="outline"
+                  size="icon"
+                  data-testid="button-wishlist"
+                >
                   <Heart className="w-4 h-4" />
                 </Button>
-                
-                <Button variant="outline" size="icon" onClick={handleShare} data-testid="button-share">
+
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleShare}
+                  data-testid="button-share"
+                >
                   <Share2 className="w-4 h-4" />
                 </Button>
               </div>
@@ -235,23 +233,48 @@ export default function ProductDetail() {
             {/* Product Features */}
             <Card>
               <CardContent className="pt-6">
-                <h3 className="font-semibold text-gray-800 mb-4" data-testid="text-features-title">Product Features</h3>
+                <h3
+                  className="font-semibold text-gray-800 mb-4"
+                  data-testid="text-features-title"
+                >
+                  Product Features
+                </h3>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-organic-green rounded-full"></div>
-                    <span className="text-gray-600" data-testid="text-feature-1">100% Natural and Organic ingredients</span>
+                    <span
+                      className="text-gray-600"
+                      data-testid="text-feature-1"
+                    >
+                      Highest quality ingredients
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-organic-green rounded-full"></div>
-                    <span className="text-gray-600" data-testid="text-feature-2">WHO GMP certified manufacturing</span>
+                    <span
+                      className="text-gray-600"
+                      data-testid="text-feature-2"
+                    >
+                      WHO GMP certified manufacturing
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-organic-green rounded-full"></div>
-                    <span className="text-gray-600" data-testid="text-feature-3">Third-party tested for purity</span>
+                    <span
+                      className="text-gray-600"
+                      data-testid="text-feature-3"
+                    >
+                      Third-party tested for purity
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-organic-green rounded-full"></div>
-                    <span className="text-gray-600" data-testid="text-feature-4">Free from artificial additives</span>
+                    <span
+                      className="text-gray-600"
+                      data-testid="text-feature-4"
+                    >
+                      Rigorous quality control
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -261,9 +284,17 @@ export default function ProductDetail() {
 
         {/* Related Products Section */}
         <section className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8" data-testid="text-related-products-title">You may also like</h2>
-          <div className="text-center py-8 text-gray-600" data-testid="text-related-products-placeholder">
-            Related products will be displayed here
+          <h2
+            className="text-2xl font-bold text-gray-800 mb-8"
+            data-testid="text-related-products-title"
+          >
+            About the product
+          </h2>
+          <div
+            className="text-center py-8 text-gray-600"
+            data-testid="text-related-products-placeholder"
+          >
+            {product.about}
           </div>
         </section>
       </div>

@@ -24,8 +24,8 @@ export const navigationItems = [
 ];
 
 export const heroTaglines = [
-  "ORGANIC WELLNESS",
-  "NATURAL HEALING", 
+  "HEALTH & WELLNESS",
+  "COMPLETE HEALING", 
   "PATIENT FOCUSED",
   "QUALITY FIRST",
   "HEALTH TRANSFORMATION"
