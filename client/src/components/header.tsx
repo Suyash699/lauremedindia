@@ -88,7 +88,7 @@ export default function Header() {
             data-testid="link-home"
           >
             <div>
-              <img src={logoIcon} className="w-10 h-8 sm:w-15 sm:h-12" />
+              <img src={logoIcon} className="w-10 h-10 sm:w-12 sm:h-12" />
             </div>
             <div>
               <h1 className="text-lg sm:text-2xl font-bold text-pharma-blue/80">

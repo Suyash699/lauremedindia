@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { certifications, navigationItems } from "@/lib/data";
+import logo from "@assets/logo_icon.png"
 
 export default function Footer() {
   return (
@@ -11,8 +12,10 @@ export default function Footer() {
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-organic-green/70 to-organic-dark/80 rounded-full flex items-center justify-center">
-                <span className="text-white text-lg sm:text-xl font-bold">L</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center">
+                <span className="text-lg sm:text-xl font-bold">
+                  <img src={logo} alt="Lauremed Organic India Logo"/>
+                </span>
               </div>
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold" data-testid="text-company-name">LAUREMED</h3>
@@ -141,7 +144,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
           <p className="text-gray-400 text-xs sm:text-sm" data-testid="text-copyright">
-            © 2024 Lauremed Organic India. All rights reserved.
+            © 2025 Lauremed Organic India. All rights reserved.
             <br className="sm:hidden" />
             <span className="hidden sm:inline"> | </span>
             <Link href="/privacy" className="hover:text-organic-green/80 transition-colors" data-testid="link-privacy">
