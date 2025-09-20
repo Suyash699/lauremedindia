@@ -285,13 +285,13 @@ export default function ProductDetail() {
         {/* Related Products Section */}
         <section className="mt-16">
           <h2
-            className="text-2xl font-bold text-gray-800 mb-8"
+            className="text-2xl font-bold text-gray-800 mb-8 text-center"
             data-testid="text-related-products-title"
           >
             About the product
           </h2>
           <div
-            className="text-center py-8 text-gray-600"
+            className="text-center py-8 text-gray-600 w-1/2 mx-auto"
             data-testid="text-related-products-placeholder"
           >
             {product.about}
