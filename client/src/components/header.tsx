@@ -24,42 +24,54 @@ export default function Header() {
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-gray-100 py-2 text-sm">
+      <div className="bg-gray-100 py-2 text-xs sm:text-sm">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4 text-gray-600">
+          <div className="flex items-center space-x-2 sm:space-x-4 text-gray-600">
             <span className="flex items-center" data-testid="location-indicator">
-              <MapPin className="w-4 h-4 mr-2 text-organic-green/80" />
-              INDIA
+              <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-organic-green/80" />
+              <span className="hidden sm:inline">INDIA</span>
+              <span className="sm:hidden">IN</span>
             </span>
           </div>
-          <div className="hidden md:flex items-center space-x-6 text-gray-600">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6 text-gray-600">
             <a 
               href="mailto:info@lauremedorganic.com" 
               className="flex items-center hover:text-organic-green/80 transition-colors"
               data-testid="link-email"
             >
               <Mail className="w-4 h-4 mr-2" />
-              info@lauremedorganic.com
+              <span className="hidden lg:inline">info@lauremedorganic.com</span>
+              <span className="lg:hidden">Email</span>
             </a>
             <span className="flex items-center" data-testid="text-hours">
               <Clock className="w-4 h-4 mr-2 text-organic-green/80" />
-              9:00 am to 7:00pm
+              <span className="hidden lg:inline">9:00 am to 7:00pm</span>
+              <span className="lg:hidden">9AM-7PM</span>
             </span>
+          </div>
+          <div className="md:hidden flex items-center space-x-2 text-gray-600">
+            <a 
+              href="mailto:info@lauremedorganic.com" 
+              className="flex items-center"
+              data-testid="link-mobile-email-top"
+            >
+              <Mail className="w-3 h-3 text-organic-green/80" />
+            </a>
           </div>
         </div>
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3" data-testid="link-home">
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3" data-testid="link-home">
             <div>
-              <img src="https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-08e4-61f7-8ed1-6a11cf4e13d9/raw?se=2025-09-09T17%3A38%3A23Z&sp=r&sv=2024-08-04&sr=b&scid=537a8b1c-d562-5883-b34f-175785dd232b&skoid=f28c0102-4d9d-4950-baf0-4a8e5f6cf9d4&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-09T16%3A31%3A47Z&ske=2025-09-10T16%3A31%3A47Z&sks=b&skv=2024-08-04&sig=n2V1sa%2BlR9/jQptqTZ4uOeHU1%2BToJxVAVZulDkzCVtQ%3D" className="w-15 h-12" />
+              <img src="https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-08e4-61f7-8ed1-6a11cf4e13d9/raw?se=2025-09-09T17%3A38%3A23Z&sp=r&sv=2024-08-04&sr=b&scid=537a8b1c-d562-5883-b34f-175785dd232b&skoid=f28c0102-4d9d-4950-baf0-4a8e5f6cf9d4&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-09T16%3A31%3A47Z&ske=2025-09-10T16%3A31%3A47Z&sks=b&skv=2024-08-04&sig=n2V1sa%2BlR9/jQptqTZ4uOeHU1%2BToJxVAVZulDkzCVtQ%3D" className="w-10 h-8 sm:w-15 sm:h-12" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-pharma-blue/80">LAUREMED</h1>
-              <p className="text-sm text-organic-green/80 font-medium">ORGANIC INDIA</p>
+              <h1 className="text-lg sm:text-2xl font-bold text-pharma-blue/80">LAUREMED</h1>
+              <p className="text-xs sm:text-sm text-organic-green/80 font-medium">ORGANIC INDIA</p>
             </div>
           </Link>
 
@@ -80,7 +92,7 @@ export default function Header() {
           </nav>
 
           {/* Search & Contact */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             {/* Search */}
             <form onSubmit={handleSearch} className="relative hidden lg:block">
               <Input
@@ -88,7 +100,7 @@ export default function Header() {
                 placeholder="What are you looking for..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-64 pl-4 pr-10"
+                className="w-48 lg:w-64 pl-4 pr-10"
                 data-testid="input-search"
               />
               <Button
@@ -100,6 +112,30 @@ export default function Header() {
                 <Search className="w-4 h-4" />
               </Button>
             </form>
+
+            {/* Mobile Quick Actions */}
+            <div className="flex md:hidden items-center space-x-1">
+              <Button 
+                size="sm" 
+                className="bg-pharma-blue hover:bg-pharma-dark h-8 w-8 p-0"
+                asChild
+                data-testid="button-mobile-phone-quick"
+              >
+                <a href="tel:+917400077781">
+                  <Phone className="w-3 h-3" />
+                </a>
+              </Button>
+              <Button 
+                size="sm" 
+                className="bg-green-500 hover:bg-green-600 h-8 w-8 p-0"
+                asChild
+                data-testid="button-mobile-whatsapp-quick"
+              >
+                <a href="https://wa.me/917400077781" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-3 h-3" />
+                </a>
+              </Button>
+            </div>
 
             {/* Contact Info */}
             <div className="hidden xl:flex items-center space-x-2 text-sm">

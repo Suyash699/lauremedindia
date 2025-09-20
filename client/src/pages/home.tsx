@@ -101,28 +101,28 @@ export default function Home() {
       </section>
 
       {/* About Company */}
-      <section className="bg-green-50">
-        <div className="flex">
-          {/* Left Image - Half width, full height, no margin */}
-          <div className="h-1/2">
+      <section className="bg-green-50 py-8 lg:py-0">
+        <div className="flex flex-col lg:flex-row">
+          {/* Left Image - Full width on mobile, half on desktop */}
+          <div className="w-full lg:w-1/2 order-2 lg:order-1">
             <img
               src={premiumPhoto}
               alt="Lauremed Organic India facility and operations"
-              className="h-fit object-cover"
+              className="w-full h-64 sm:h-80 lg:h-fit object-cover"
               data-testid="img-about-company"
             />
           </div>
 
-          {/* Right Content - Half width */}
-          <div className="w-1/2 mt-32 px-8 lg:px-12 space-y-6">
+          {/* Right Content - Full width on mobile, half on desktop */}
+          <div className="w-full lg:w-1/2 order-1 lg:order-2 px-4 sm:px-8 lg:px-12 py-8 lg:py-32 space-y-4 lg:space-y-6">
               <p
-                className="text-organic-green/80 font-semibold mb-2"
+                className="text-organic-green/80 font-semibold mb-2 text-sm sm:text-base"
                 data-testid="text-welcome"
               >
                 WELCOME TO Lauremed Organic India
               </p>
               <h2
-                className="text-3xl lg:text-4xl font-bold text-gray-800"
+                className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800"
                 data-testid="text-company-title"
               >
                 Lauremed Aims To Be The Fastest Growing Organic Pharmaceutical
@@ -130,7 +130,7 @@ export default function Home() {
               </h2>
 
               <p
-                className="text-gray-600 leading-relaxed"
+                className="text-gray-600 leading-relaxed text-sm sm:text-base"
                 data-testid="text-company-description-1"
               >
                 Incorporated in 2025, Lauremed Organic India aims to be the
@@ -141,7 +141,7 @@ export default function Home() {
               </p>
 
               <p
-                className="text-gray-600 leading-relaxed"
+                className="text-gray-600 leading-relaxed text-sm sm:text-base"
                 data-testid="text-company-description-2"
               >
                 Our passion and pursuit of potentially life-changing organic
@@ -163,7 +163,7 @@ export default function Home() {
 
               <Button
                 asChild
-                className="bg-organic-green/60 hover:bg-organic-dark/80"
+                className="bg-organic-green/60 hover:bg-organic-dark/80 w-full sm:w-auto"
                 data-testid="button-know-more"
               >
                 <Link href="/about">Know More About Us</Link>
@@ -173,17 +173,17 @@ export default function Home() {
       </section>
 
       {/* Specialties */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-blue-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2
-              className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
               data-testid="text-specialties-title"
             >
               Organic Specialties We Deal
             </h2>
             <p
-              className="text-gray-600 max-w-2xl mx-auto"
+              className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base"
               data-testid="text-specialties-description"
             >
               Comprehensive range of organic and natural pharmaceutical
@@ -191,7 +191,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-6">
             {companySpecialties.map((specialty) => (
               <SpecialtyCard key={specialty.id} specialty={specialty} />
             ))}
@@ -200,17 +200,17 @@ export default function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-blue-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2
-              className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
               data-testid="text-featured-products-title"
             >
               Featured Organic Products
             </h2>
             <p
-              className="text-gray-600 max-w-2xl mx-auto"
+              className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base"
               data-testid="text-featured-products-description"
             >
               Discover our premium range of organic pharmaceutical products,
@@ -218,7 +218,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -227,7 +227,7 @@ export default function Home() {
           <div className="text-center">
             <Button
               asChild
-              className="bg-pharma-blue/60 hover:bg-pharma-dark/80"
+              className="bg-pharma-blue/60 hover:bg-pharma-dark/80 w-full sm:w-auto"
               data-testid="button-view-all-products"
             >
               <Link href="/products">View All Products</Link>
@@ -237,24 +237,24 @@ export default function Home() {
       </section>
 
       {/* Popular Categories */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-8 sm:py-12 lg:py-16 bg-blue-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2
-              className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
               data-testid="text-popular-categories-title"
             >
               Popular Organic Categories
             </h2>
             <p
-              className="text-gray-600 max-w-2xl mx-auto"
+              className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base"
               data-testid="text-popular-categories-description"
             >
               Browse our most sought-after organic pharmaceutical categories
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {popularCategories.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
@@ -266,23 +266,23 @@ export default function Home() {
       {/* <StatsSection /> */}
 
       {/* Geographic Presence */}
-      <section className="py-16 bg-gray-100">
+      <section className="py-8 sm:py-12 lg:py-16 bg-gray-100">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <h2
-              className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
               data-testid="text-geographic-title"
             >
               Spreading Wings Across the Globe
             </h2>
             <h3
-              className="text-2xl font-semibold text-organic-green/80 mb-6"
+              className="text-lg sm:text-xl lg:text-2xl font-semibold text-organic-green/80 mb-4 sm:mb-6"
               data-testid="text-presence-india"
             >
               Our Presence In INDIA
             </h3>
             <p
-              className="text-gray-600 max-w-3xl mx-auto"
+              className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base"
               data-testid="text-geographic-description"
             >
               Lauremed Organic India is your reliable pharmaceutical
@@ -294,8 +294,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1">
               <img
                 src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=400&fit=crop"
                 alt="Modern pharmaceutical distribution center with organic medicine storage"
@@ -304,8 +304,8 @@ export default function Home() {
               />
             </div>
 
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div
                   className="text-center p-4 bg-gray-50 rounded-lg"
                   data-testid="stat-states"
@@ -317,14 +317,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-organic-green/10 to-pharma-blue/10 p-6 rounded-lg">
+              <div className="bg-gradient-to-r from-organic-green/10 to-pharma-blue/10 p-4 sm:p-6 rounded-lg">
                 <h4
-                  className="font-semibold text-gray-800 mb-3"
+                  className="font-semibold text-gray-800 mb-3 text-sm sm:text-base"
                   data-testid="text-key-markets"
                 >
                   Key Market Presence
                 </h4>
-                <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-gray-600">
                   <div>• Maharashtra</div>
                   <div>• Uttar Pradesh</div>
                   <div>• Madhya Pradesh</div>

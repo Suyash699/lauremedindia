@@ -22,22 +22,22 @@ export default function CategoryCard({ category }: CategoryCardProps) {
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-organic-green/20 to-pharma-blue/20">
-                <span className="text-4xl">🌿</span>
+                <span className="text-3xl sm:text-4xl">🌿</span>
               </div>
             )}
           </div>
           
-          <div className="p-4">
-            <h3 className="font-semibold text-gray-800 group-hover:text-organic-green transition-colors mb-2" data-testid={`text-category-name-${category.id}`}>
+          <div className="p-3 sm:p-4">
+            <h3 className="font-semibold text-gray-800 group-hover:text-organic-green transition-colors mb-2 text-sm sm:text-base line-clamp-2" data-testid={`text-category-name-${category.id}`}>
               {category.name}
             </h3>
-            <p className="text-gray-600 text-sm mb-3" data-testid={`text-category-count-${category.id}`}>
+            <p className="text-gray-600 text-xs sm:text-sm mb-3" data-testid={`text-category-count-${category.id}`}>
               ({category.productCount} Products)
             </p>
             <Button 
               variant="ghost" 
               size="sm"
-              className="text-organic-green hover:text-organic-dark font-medium p-0"
+              className="text-organic-green hover:text-organic-dark font-medium p-0 text-xs sm:text-sm"
               data-testid={`button-shop-category-${category.id}`}
             >
               Shop Now →
