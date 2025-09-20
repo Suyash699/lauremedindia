@@ -104,17 +104,17 @@ export default function Home() {
       <section className="bg-green-50">
         <div className="flex">
           {/* Left Image - Half width, full height, no margin */}
-          <div className="w-1/2">
+          <div className="h-1/2">
             <img
               src={premiumPhoto}
               alt="Lauremed Organic India facility and operations"
-              className="w-full h-full object-cover"
+              className="h-fit object-cover"
               data-testid="img-about-company"
             />
           </div>
 
           {/* Right Content - Half width */}
-          <div className="w-1/2 px-8 lg:px-12 space-y-6">
+          <div className="w-1/2 mt-32 px-8 lg:px-12 space-y-6">
               <p
                 className="text-organic-green/80 font-semibold mb-2"
                 data-testid="text-welcome"
