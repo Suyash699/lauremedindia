@@ -136,25 +136,25 @@ export class MemStorage implements IStorage {
       },
       {
         name: "Nutrition Care",
-        description: "Organic nutrition supplements",
+        description: "Nutrition supplements",
         imageUrl:
           "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=400&h=300&fit=crop",
       },
       {
         name: "Pain Management",
-        description: "Natural pain relief solutions",
+        description: "Pain relief solutions",
         imageUrl:
           "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=300&fit=crop",
       },
       {
         name: "Respiratory Care",
-        description: "Organic respiratory health",
+        description: "Respiratory health solutions",
         imageUrl:
           "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       },
       {
-        name: "Natural Antibiotics",
-        description: "Herbal antimicrobial products",
+        name: "Antibiotics",
+        description: "Antimicrobial products",
         imageUrl:
           "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=300&fit=crop",
       },
@@ -166,7 +166,7 @@ export class MemStorage implements IStorage {
       },
       {
         name: "Dermatology",
-        description: "Natural skin treatments",
+        description: "Skin treatments",
         imageUrl:
           "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop",
       },

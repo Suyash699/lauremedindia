@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { Shield, Award, Users, Globe, Leaf, Heart, Target, CheckCircle } from "lucide-react";
 import { companyStats, certifications } from "@/lib/data";
+import dipanshu from "@/assets/dipanshu.png";
+import kuldeep from "@/assets/kuldeep.png";
 
 export default function About() {
   const milestones = [
@@ -60,13 +62,13 @@ export default function About() {
       name: "Mr. Dipanshu Tiwari",
       position: "Co-Founder",
       description: "Experienced Microbiologist and QC chemist, with Masters in Organic Chemistry",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop&crop=face"
+      image: {dipanshu}
     },
     {
       name: "Mr. Kuldeep Yadav",
       position: "Co-Founder",
       description: "Experienced Quality Analysis Chemist",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face"
+      image: {kuldeep}
     },
   ];
 
@@ -250,51 +252,6 @@ export default function About() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Statistics */}
-      <section className="py-16 bg-gradient-to-r from-organic-green/80 to-pharma-blue/80 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4" data-testid="text-stats-title">
-              Our Impact in Numbers
-            </h2>
-            <p className="text-xl opacity-90" data-testid="text-stats-description">
-              These numbers reflect our commitment to excellence and growth in organic healthcare.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 text-center">
-            <div data-testid="stat-about-customers">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">{companyStats.customers}</div>
-              <div className="text-sm opacity-90">Satisfied Customers</div>
-            </div>
-            <div data-testid="stat-about-companies">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">{companyStats.companies}</div>
-              <div className="text-sm opacity-90">Partner Companies</div>
-            </div>
-            <div data-testid="stat-about-products">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">{companyStats.products}</div>
-              <div className="text-sm opacity-90">Organic Products</div>
-            </div>
-            <div data-testid="stat-about-retailers">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">{companyStats.retailers}</div>
-              <div className="text-sm opacity-90">Retail Outlets</div>
-            </div>
-            <div data-testid="stat-about-space">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">{companyStats.space}</div>
-              <div className="text-sm opacity-90">SQFT Facilities</div>
-            </div>
-            <div data-testid="stat-about-employees">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">{companyStats.employees}</div>
-              <div className="text-sm opacity-90">Team Members</div>
-            </div>
-            <div data-testid="stat-about-industries">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">{companyStats.industries}</div>
-              <div className="text-sm opacity-90">Industry Presence</div>
-            </div>
           </div>
         </div>
       </section>
