@@ -1,0 +1,822 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lauremed Organic India - Leading Organic Pharmaceutical Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'organic-green': '#22C55E',
+                        'organic-dark': '#16A34A',
+                        'pharma-blue': '#3B82F6',
+                        'pharma-dark': '#1E40AF',
+                        'accent-orange': '#F97316'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- @COMPONENT: Header [navigation, logo, search, contact] -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <!-- Top Bar -->
+        <div class="bg-gray-100 py-2 text-sm">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-4 text-gray-600">
+                    <span class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-organic-green"></i>
+                        INDIA
+                    </span>
+                </div>
+                <div class="flex items-center space-x-6 text-gray-600">
+                    <a href="mailto:info@lauremedorganic.com" class="flex items-center hover:text-organic-green transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>
+                        info@lauremedorganic.com
+                    </a>
+                    <span class="flex items-center">
+                        <i class="fas fa-clock mr-2 text-organic-green"></i>
+                        9:00 am to 7:00pm
+                    </span>
+                    <div class="flex items-center space-x-2">
+                        <img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-auto">
+                        <select class="bg-transparent text-gray-600 text-sm cursor-pointer" data-mock="true">
+                            <option>English</option>
+                            <option>Hindi</option>
+                            <option>Spanish</option>
+                            <option>French</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-organic-green to-organic-dark rounded-full flex items-center justify-center">
+                        <i class="fas fa-leaf text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">LAUREMED</h1>
+                        <p class="text-sm text-organic-green font-medium">ORGANIC INDIA</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-organic-green font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-organic-green font-medium transition-colors">About Us</a>
+                    <div class="relative group">
+                        <a href="#products" class="text-gray-700 hover:text-organic-green font-medium transition-colors flex items-center">
+                            Our Products
+                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <!-- Dropdown would be implemented here -->
+                    </div>
+                    <a href="#specialties" class="text-gray-700 hover:text-organic-green font-medium transition-colors">Specialties</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-organic-green font-medium transition-colors">Gallery</a>
+                    <a href="#contact" class="text-gray-700 hover:text-organic-green font-medium transition-colors">Contact Us</a>
+                </nav>
+
+                <!-- Search & Contact -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative hidden lg:block">
+                        <input type="text" placeholder="What are you looking for..." class="w-64 pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-organic-green" data-mock="true">
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-organic-green text-white p-2 rounded">
+                            <i class="fas fa-search text-sm"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm">
+                        <div class="text-right">
+                            <p class="font-semibold text-gray-800">Sales & Service Support</p>
+                            <p class="text-gray-600">+91 8355963959</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="tel:+918355963959" class="bg-pharma-blue text-white p-2 rounded-full hover:bg-pharma-dark transition-colors">
+                                <i class="fas fa-phone text-sm"></i>
+                            </a>
+                            <a href="https://wa.me/918355963959" class="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero Section [main banner, rotating taglines, product showcase] -->
+    <section class="relative bg-gradient-to-r from-organic-green to-pharma-blue text-white overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>'); background-size: 60px 60px;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16 lg:py-24 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg font-medium opacity-90">Leading the Way in Health Transformation Worldwide</p>
+                    
+                    <!-- Rotating Taglines -->
+                    <div class="h-16 overflow-hidden">
+                        <div class="animate-bounce" data-implementation="Implement rotating text animation">
+                            <h1 class="text-4xl lg:text-5xl font-bold leading-tight">ORGANIC WELLNESS</h1>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 text-sm font-medium">
+                        <span class="bg-white/20 px-4 py-2 rounded-full">High Quality Production</span>
+                        <span class="bg-white/20 px-4 py-2 rounded-full">Fastest Growing Organic Pharma</span>
+                        <span class="bg-white/20 px-4 py-2 rounded-full">Patient Focused</span>
+                        <span class="bg-white/20 px-4 py-2 rounded-full">Quality First</span>
+                        <span class="bg-white/20 px-4 py-2 rounded-full">100% Organic</span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="bg-white text-organic-green px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" data-event="click:exploreProducts">
+                            Explore Products
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-organic-green transition-colors" data-event="click:contactUs">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <!-- Modern pharmaceutical products showcase display -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Product bottles and medicine packages mockup -->
+                        <div class="space-y-4">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-3 hover:rotate-0 transition-transform">
+                                <div class="w-full h-32 bg-gradient-to-b from-white/20 to-white/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-capsules text-3xl text-white/80"></i>
+                                </div>
+                                <p class="text-sm mt-2 text-center font-medium">Organic Supplements</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform -rotate-2 hover:rotate-0 transition-transform">
+                                <div class="w-full h-32 bg-gradient-to-b from-white/20 to-white/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-prescription-bottle-alt text-3xl text-white/80"></i>
+                                </div>
+                                <p class="text-sm mt-2 text-center font-medium">Herbal Medicines</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 mt-8">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform -rotate-1 hover:rotate-0 transition-transform">
+                                <div class="w-full h-32 bg-gradient-to-b from-white/20 to-white/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-pills text-3xl text-white/80"></i>
+                                </div>
+                                <p class="text-sm mt-2 text-center font-medium">Natural Remedies</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 transform rotate-2 hover:rotate-0 transition-transform">
+                                <div class="w-full h-32 bg-gradient-to-b from-white/20 to-white/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-leaf text-3xl text-white/80"></i>
+                                </div>
+                                <p class="text-sm mt-2 text-center font-medium">Ayurvedic Care</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Partner Logos Carousel [certifications, quality badges] -->
+    <section class="bg-white py-8 border-b">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-6">
+                <h3 class="text-lg font-semibold text-gray-700 mb-2">Experience Our Quality Yourself</h3>
+                <p class="text-gray-600">Trusted by healthcare professionals worldwide</p>
+            </div>
+            
+            <div class="flex justify-center items-center space-x-8 overflow-x-auto pb-4" data-implementation="Implement horizontal scrolling carousel">
+                <!-- Quality certifications and partner logos -->
+                <div class="flex-shrink-0 w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center border hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold text-gray-600">WHO</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center border hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold text-gray-600">GMP</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center border hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold text-gray-600">FDA</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center border hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold text-gray-600">ISO</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center border hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold text-organic-green">ORGANIC</span>
+                </div>
+                <div class="flex-shrink-0 w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center border hover:shadow-md transition-shadow">
+                    <span class="text-xs font-bold text-gray-600">AYUSH</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Partner Logos Carousel -->
+
+    <!-- @COMPONENT: Company Values [reliability, security, affordability, quality] -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-organic-green rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Reliable</h3>
+                    <p class="text-gray-600">All products displayed on Lauremed website are procured from verified organic sources and thoroughly tested.</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-pharma-blue rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-lock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Secure</h3>
+                    <p class="text-gray-600">Lauremed uses Secure Sockets Layer (SSL) 128-bit encryption for all transactions and data protection.</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-dollar-sign text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Affordable</h3>
+                    <p class="text-gray-600">Discover cost-effective organic medicine alternatives and exclusive natural products at the lowest prices.</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Commitment to Quality</h3>
+                    <p class="text-gray-600">Lauremed's Unwavering Commitment to Providing Quality Organic Medicine and Natural Healthcare Solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Company Values -->
+
+    <!-- @COMPONENT: About Company [company introduction, mission, values] -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-organic-green font-semibold mb-2">WELCOME TO Lauremed Organic India</p>
+                    <!-- High-quality pharmaceutical facility image showcasing modern organic medicine production -->
+                    <img src="https://pixabay.com/get/g4ccdd5e9aa81493e996e8268c2262042d77d8e00f53f83e5a50b59be0ceb5f947178dce07d967308b49acb24bfb4c09f4eaf6f9a250747a32154e348beb44747_1280.jpg" alt="Modern pharmaceutical laboratory with organic medicine production" class="rounded-xl shadow-lg w-full h-auto" />
+                </div>
+                
+                <div class="space-y-6">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800">Lauremed Is Now Fastest Growing Organic Pharmaceutical Company In India</h2>
+                    
+                    <p class="text-gray-600 leading-relaxed">
+                        Incorporated in 2019, Lauremed Organic India is now the fastest growing organic pharmaceutical company in India. We are a patient-focused, values-based, Quality driven pharmaceutical company committed to bringing Better Health and a Brighter Future to people worldwide through natural and organic medicine solutions.
+                    </p>
+                    
+                    <p class="text-gray-600 leading-relaxed">
+                        Our passion and pursuit of potentially life-changing organic treatments for patients by the means of affordability and Quality. Our focus on sustainable, natural medicine makes us a leader in the organic pharmaceutical industry. Lauremed's Global Headquarters in an Industrial Zone at Navi Mumbai, India, serves as the head office for its operations worldwide.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-organic-green" data-bind="stats.customers">2M+</div>
+                            <div class="text-sm text-gray-600">Satisfied Customers</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-organic-green" data-bind="stats.products">5K+</div>
+                            <div class="text-sm text-gray-600">Organic Products</div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-organic-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-organic-dark transition-colors" data-event="click:learnMore">
+                        Know More About Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Company -->
+
+    <!-- @COMPONENT: Specialties Grid [medical categories we deal with] -->
+    <section id="specialties" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Organic Specialties We Deal</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive range of organic and natural pharmaceutical solutions across multiple healthcare categories</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" data-implementation="Should be responsive grid that adapts to screen size">
+                <!-- @MAP: specialties.map(specialty => ( -->
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image showcasing gynecology and women's organic healthcare products -->
+                    <img src="https://pixabay.com/get/g300b893228225026b8b1f4f7f025fae2531e6bf8e47cbeb13a7f7b8a92d76e3794e6151a1c2c5924e7723e1f675a9f6643cd4f5fdb22c50dfa51e23abc6569ea_1280.jpg" alt="Organic gynecology and women's healthcare products" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Gynaecology Care</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image showing organic nutrition supplements and vitamins -->
+                    <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Organic nutrition supplements and vitamins" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Nutrition Care</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image of natural pain management and relief products -->
+                    <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Natural pain management and relief products" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Pain Management</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image displaying organic respiratory care medicines -->
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Organic respiratory care medicines and treatments" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Respiratory Care</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image of natural antibiotics and antimicrobial products -->
+                    <img src="https://pixabay.com/get/ga76e2e0caeb3dc3e436b157b139bf53ddf735fd5b087c15abab5b0d7fdf176dceaf86ad1bd8400b8fa7e964c3007646549eeb31ede1e96013b2154d7f12e0de0_1280.jpg" alt="Natural antibiotics and antimicrobial products" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Natural Antibiotics</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image showing organic cardiac care and heart health products -->
+                    <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Organic cardiac care and heart health products" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Cardiac Care</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image of natural dermatology and skin care products -->
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Natural dermatology and organic skin care products" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Dermatology</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image showing organic diabetes care and blood sugar management -->
+                    <img src="https://pixabay.com/get/g6cf3ba7956fe39c17b394f8f4b83e2c24a3f8407c27b966fd9ac3d4798f7f6731d624b6e57090206adaa4ad73cf20d454b7b4be23b5dc0a15fe08c82b49081d1_1280.jpg" alt="Organic diabetes care and blood sugar management products" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Diabetes Care</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image of natural gastro care and digestive health products -->
+                    <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" alt="Natural gastro care and digestive health products" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Gastro Care</h3>
+                </div>
+
+                <div class="group cursor-pointer" data-event="click:viewSpecialty">
+                    <!-- Image displaying ayurvedic and herbal immunity boosters -->
+                    <img src="https://pixabay.com/get/g2d37276ec629f406e8d8697b8ae8f70276388dfe7f62f592899c07b938f907f2c9c8f2bcb2bcb9fc4eb3d942de1ae9ddc83caf22985bc0b3fe64e84f0cea0da0_1280.jpg" alt="Ayurvedic and herbal immunity boosters" class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform" />
+                    <h3 class="text-center mt-3 font-semibold text-gray-700 group-hover:text-organic-green transition-colors">Immunity Care</h3>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Specialties Grid -->
+
+    <!-- @COMPONENT: Featured Products [product showcase carousel] -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Featured Organic Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our premium range of organic pharmaceutical products, carefully crafted for optimal health and wellness</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-implementation="Should implement product carousel for mobile">
+                <!-- @MAP: featuredProducts.map(product => ( -->
+                <div class="bg-gray-50 rounded-xl p-6 group hover:shadow-lg transition-shadow" data-event="click:viewProduct">
+                    <div class="w-full h-48 bg-white rounded-lg mb-4 flex items-center justify-center shadow-sm">
+                        <!-- Organic herbal supplement bottle with natural ingredients -->
+                        <img src="https://pixabay.com/get/g1f2214ec4584ffd6f6ae4f8a76c186906388344b1e7acea626817d05d07199efa53e1caa514d9617aeb85e010c0695cce9945ce06f2c296c14263b926e11d351_1280.jpg" alt="Organic herbal supplement bottle with natural ingredients" class="w-full h-full object-cover rounded-lg" />
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-bind="product.name">Organic Immunity Plus</h3>
+                    <p class="text-gray-600 text-sm mb-3" data-bind="product.description">Natural immunity booster with organic herbs and vitamins</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-organic-green font-bold text-lg" data-bind="product.price">₹299</span>
+                        <button class="bg-organic-green text-white px-4 py-2 rounded-lg text-sm hover:bg-organic-dark transition-colors" data-event="click:addToCart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 group hover:shadow-lg transition-shadow" data-event="click:viewProduct">
+                    <div class="w-full h-48 bg-white rounded-lg mb-4 flex items-center justify-center shadow-sm">
+                        <!-- Natural pain relief gel with organic components -->
+                        <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300" alt="Natural pain relief gel with organic components" class="w-full h-full object-cover rounded-lg" />
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-bind="product.name">Organic Pain Relief Gel</h3>
+                    <p class="text-gray-600 text-sm mb-3" data-bind="product.description">Fast-acting natural pain relief with organic extracts</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-organic-green font-bold text-lg" data-bind="product.price">₹199</span>
+                        <button class="bg-organic-green text-white px-4 py-2 rounded-lg text-sm hover:bg-organic-dark transition-colors" data-event="click:addToCart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 group hover:shadow-lg transition-shadow" data-event="click:viewProduct">
+                    <div class="w-full h-48 bg-white rounded-lg mb-4 flex items-center justify-center shadow-sm">
+                        <!-- Organic multivitamin tablets with natural ingredients -->
+                        <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300" alt="Organic multivitamin tablets with natural ingredients" class="w-full h-full object-cover rounded-lg" />
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-bind="product.name">Organic Multi-Vitamin</h3>
+                    <p class="text-gray-600 text-sm mb-3" data-bind="product.description">Complete nutrition with organic vitamins and minerals</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-organic-green font-bold text-lg" data-bind="product.price">₹449</span>
+                        <button class="bg-organic-green text-white px-4 py-2 rounded-lg text-sm hover:bg-organic-dark transition-colors" data-event="click:addToCart">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-pharma-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-pharma-dark transition-colors" data-event="click:viewAllProducts">
+                    View All Products
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Featured Products -->
+
+    <!-- @COMPONENT: Popular Categories [grid of product categories with counts] -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Popular Organic Categories</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Browse our most sought-after organic pharmaceutical categories</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- @MAP: categories.map(category => ( -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group cursor-pointer" data-event="click:browseCategory">
+                    <!-- Organic gynecology and prenatal care products -->
+                    <img src="https://pixabay.com/get/g9e73ac3cf276b08a36da794498711ba8067f2a051a54a0f42ce38e0acde0715b9069581a8edac855553d8b9e5a1625228cb8d2172712828dae92b2dcf00da097_1280.jpg" alt="Organic gynecology and prenatal care products" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-organic-green transition-colors" data-bind="category.name">Organic Prenatal Care</h3>
+                        <p class="text-gray-600 text-sm mb-3" data-bind="category.count">(4 Products)</p>
+                        <button class="text-organic-green font-medium text-sm hover:underline" data-event="click:shopCategory">
+                            Shop Now →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group cursor-pointer" data-event="click:browseCategory">
+                    <!-- Natural fever and pain relief medicines -->
+                    <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250" alt="Natural fever and pain relief medicines" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-organic-green transition-colors" data-bind="category.name">Natural Pain Relief</h3>
+                        <p class="text-gray-600 text-sm mb-3" data-bind="category.count">(13 Products)</p>
+                        <button class="text-organic-green font-medium text-sm hover:underline" data-event="click:shopCategory">
+                            Shop Now →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group cursor-pointer" data-event="click:browseCategory">
+                    <!-- Organic antiallergic and immunity products -->
+                    <img src="https://pixabay.com/get/gbc20b424bfb36fa8ca75326f159d6f0bcd351e7efb7ee940d0b6cd832ae538ba7efe41806c171313be74cdeac4524652a9aad29fe8d5a2bb73ec719ec8fce1a9_1280.jpg" alt="Organic antiallergic and immunity products" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-organic-green transition-colors" data-bind="category.name">Organic Immunity</h3>
+                        <p class="text-gray-600 text-sm mb-3" data-bind="category.count">(8 Products)</p>
+                        <button class="text-organic-green font-medium text-sm hover:underline" data-event="click:shopCategory">
+                            Shop Now →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group cursor-pointer" data-event="click:browseCategory">
+                    <!-- Natural calcium and bone health supplements -->
+                    <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250" alt="Natural calcium and bone health supplements" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-organic-green transition-colors" data-bind="category.name">Calcium Management</h3>
+                        <p class="text-gray-600 text-sm mb-3" data-bind="category.count">(6 Products)</p>
+                        <button class="text-organic-green font-medium text-sm hover:underline" data-event="click:shopCategory">
+                            Shop Now →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group cursor-pointer" data-event="click:browseCategory">
+                    <!-- Organic vitamin D and sunlight supplements -->
+                    <img src="https://pixabay.com/get/g2f5bf828a8efc821c75e45188bedba7dc7f4c79b3294f0f2e8c05fdc01a92d16b62214714d796702a5415cb82105d0527371dca783dc14d9d9dbd6fcd1858439_1280.jpg" alt="Organic vitamin D and sunlight supplements" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-organic-green transition-colors" data-bind="category.name">Vitamin D Management</h3>
+                        <p class="text-gray-600 text-sm mb-3" data-bind="category.count">(5 Products)</p>
+                        <button class="text-organic-green font-medium text-sm hover:underline" data-event="click:shopCategory">
+                            Shop Now →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group cursor-pointer" data-event="click:browseCategory">
+                    <!-- Natural skin care and dermatology products -->
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250" alt="Natural skin care and dermatology products" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-organic-green transition-colors" data-bind="category.name">Natural Skin Care</h3>
+                        <p class="text-gray-600 text-sm mb-3" data-bind="category.count">(7 Products)</p>
+                        <button class="text-organic-green font-medium text-sm hover:underline" data-event="click:shopCategory">
+                            Shop Now →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group cursor-pointer" data-event="click:browseCategory">
+                    <!-- Organic herbal shampoo and hair care -->
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250" alt="Organic herbal shampoo and hair care products" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-organic-green transition-colors" data-bind="category.name">Herbal Hair Care</h3>
+                        <p class="text-gray-600 text-sm mb-3" data-bind="category.count">(4 Products)</p>
+                        <button class="text-organic-green font-medium text-sm hover:underline" data-event="click:shopCategory">
+                            Shop Now →
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group cursor-pointer" data-event="click:browseCategory">
+                    <!-- Natural digestive and gastro care products -->
+                    <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=250" alt="Natural digestive and gastro care products" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition-transform" />
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-800 mb-2 group-hover:text-organic-green transition-colors" data-bind="category.name">Digestive Care</h3>
+                        <p class="text-gray-600 text-sm mb-3" data-bind="category.count">(9 Products)</p>
+                        <button class="text-organic-green font-medium text-sm hover:underline" data-event="click:shopCategory">
+                            Shop Now →
+                        </button>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Popular Categories -->
+
+    <!-- @COMPONENT: Company Statistics [satisfied customers, products, presence] -->
+    <section class="py-16 bg-gradient-to-r from-organic-green to-pharma-blue text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 text-center">
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold mb-2" data-bind="stats.customers">2M+</div>
+                    <div class="text-sm opacity-90">Satisfied Customers</div>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold mb-2" data-bind="stats.companies">150+</div>
+                    <div class="text-sm opacity-90">Companies Associated</div>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold mb-2" data-bind="stats.products">5K+</div>
+                    <div class="text-sm opacity-90">Organic Products</div>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold mb-2" data-bind="stats.retailers">10K+</div>
+                    <div class="text-sm opacity-90">Retailing Counters</div>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold mb-2" data-bind="stats.space">50K+</div>
+                    <div class="text-sm opacity-90">SQFT Stock Space</div>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold mb-2" data-bind="stats.employees">200+</div>
+                    <div class="text-sm opacity-90">Employees</div>
+                </div>
+                <div>
+                    <div class="text-3xl lg:text-4xl font-bold mb-2" data-bind="stats.industries">25+</div>
+                    <div class="text-sm opacity-90">Industries Presence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Company Statistics -->
+
+    <!-- @COMPONENT: Geographic Presence [India map, global expansion] -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Spreading Wings Across the Globe</h2>
+                <h3 class="text-2xl font-semibold text-organic-green mb-6">Our Presence In INDIA</h3>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Lauremed Organic India is your reliable pharmaceutical distribution company. With pharmacies across the country, we provide convenience, knowledge, and a wide choice of organic healthcare items. As being the fastest growing organic pharmaceutical company, we are committed to bringing natural wellness to every corner of India.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Modern pharmaceutical distribution center with organic medicine storage -->
+                    <img src="https://pixabay.com/get/gd4138d0489616217759ecf9b776627938cfcd0f8ac898a5cbfbf59a5e2f81b6977626fa3f96c7ff916fa85e44b8e30fb7911bd865049e41843d5b4611085e05f_1280.jpg" alt="Modern pharmaceutical distribution center with organic medicine storage" class="rounded-xl shadow-lg w-full h-auto" />
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-organic-green mb-2">28</div>
+                            <div class="text-sm text-gray-600">States Covered</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-organic-green mb-2">500+</div>
+                            <div class="text-sm text-gray-600">Cities Reached</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-organic-green mb-2">8</div>
+                            <div class="text-sm text-gray-600">Union Territories</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-organic-green mb-2">50+</div>
+                            <div class="text-sm text-gray-600">Distribution Centers</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-organic-green/10 to-pharma-blue/10 p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-3">Key Market Presence</h4>
+                        <div class="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                            <div>• Maharashtra</div>
+                            <div>• Gujarat</div>
+                            <div>• Karnataka</div>
+                            <div>• Tamil Nadu</div>
+                            <div>• Delhi NCR</div>
+                            <div>• West Bengal</div>
+                            <div>• Rajasthan</div>
+                            <div>• Uttar Pradesh</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Geographic Presence -->
+
+    <!-- @COMPONENT: Footer [contact info, links, certifications] -->
+    <footer id="contact" class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-organic-green to-organic-dark rounded-full flex items-center justify-center">
+                            <i class="fas fa-leaf text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">LAUREMED</h3>
+                            <p class="text-organic-green font-medium">ORGANIC INDIA</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Leading the way in organic pharmaceutical solutions, Lauremed Organic India is committed to providing natural, safe, and effective healthcare products that promote wellness and healing through the power of nature.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-organic-green p-3 rounded-full hover:bg-organic-dark transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-organic-green p-3 rounded-full hover:bg-organic-dark transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-organic-green p-3 rounded-full hover:bg-organic-dark transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-organic-green p-3 rounded-full hover:bg-organic-dark transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="#about" class="block text-gray-300 hover:text-organic-green transition-colors">About Us</a>
+                        <a href="#products" class="block text-gray-300 hover:text-organic-green transition-colors">Our Products</a>
+                        <a href="#specialties" class="block text-gray-300 hover:text-organic-green transition-colors">Specialties</a>
+                        <a href="#" class="block text-gray-300 hover:text-organic-green transition-colors">Quality Assurance</a>
+                        <a href="#" class="block text-gray-300 hover:text-organic-green transition-colors">Certifications</a>
+                        <a href="#contact" class="block text-gray-300 hover:text-organic-green transition-colors">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Information</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-organic-green mt-1"></i>
+                            <div>
+                                <p class="text-gray-300">Industrial Zone, Navi Mumbai,</p>
+                                <p class="text-gray-300">Maharashtra 400708, India</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-organic-green"></i>
+                            <a href="tel:+918355963959" class="text-gray-300 hover:text-organic-green transition-colors">+91 8355963959</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-organic-green"></i>
+                            <a href="mailto:info@lauremedorganic.com" class="text-gray-300 hover:text-organic-green transition-colors">info@lauremedorganic.com</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-organic-green"></i>
+                            <span class="text-gray-300">Mon - Sat: 9:00 AM - 7:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="text-center mb-6">
+                    <h4 class="text-lg font-semibold mb-4">Our Certifications & Quality Standards</h4>
+                    <div class="flex justify-center items-center space-x-8 flex-wrap gap-4">
+                        <div class="bg-gray-800 px-4 py-2 rounded-lg">
+                            <span class="font-bold text-organic-green">WHO GMP</span>
+                        </div>
+                        <div class="bg-gray-800 px-4 py-2 rounded-lg">
+                            <span class="font-bold text-organic-green">FDA</span>
+                        </div>
+                        <div class="bg-gray-800 px-4 py-2 rounded-lg">
+                            <span class="font-bold text-organic-green">ISO 9001:2015</span>
+                        </div>
+                        <div class="bg-gray-800 px-4 py-2 rounded-lg">
+                            <span class="font-bold text-organic-green">ORGANIC INDIA</span>
+                        </div>
+                        <div class="bg-gray-800 px-4 py-2 rounded-lg">
+                            <span class="font-bold text-organic-green">AYUSH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Lauremed Organic India. All rights reserved. | 
+                    <a href="#" class="hover:text-organic-green transition-colors">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-organic-green transition-colors">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-6 right-6 bg-organic-green text-white p-3 rounded-full shadow-lg hover:bg-organic-dark transition-colors opacity-0 invisible" data-event="click:scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        (function() {
+            // TODO: Implement business logic, API calls, or state management
+            
+            // Scroll to top functionality
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                    scrollToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                    scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // TODO: Implement rotating hero taglines
+            // TODO: Implement product carousel functionality
+            // TODO: Implement search functionality
+            // TODO: Implement shopping cart functionality
+            // TODO: Implement language switching
+            // TODO: Implement mobile menu toggle
+            
+        })();
+    </script>
+</body>
+</html>

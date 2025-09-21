@@ -37,7 +37,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Partner Logos Carousel */}
-      <section id="quality-section" className="bg-gray-100 py-8 border-b">
+      <section className="bg-gray-100 py-8 border-b">
         <div className="container mx-auto px-4">
           <div className="text-center mb-6">
             <h3

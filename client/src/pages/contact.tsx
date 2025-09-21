@@ -132,7 +132,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed" data-testid="text-contact-subtitle">
-            We're here to help you with any questions about our organic pharmaceutical products. Reach out to us and experience our commitment to excellent customer service.
+            We're here to help you with any questions about our pharmaceutical products. Reach out to us and experience our commitment to excellent customer service.
           </p>
         </div>
       </section>
@@ -413,16 +413,6 @@ export default function Contact() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-gray-800 mb-3" data-testid="text-faq-question-1">
-                  What makes your products 100% organic?
-                </h3>
-                <p className="text-gray-600 text-sm" data-testid="text-faq-answer-1">
-                  All our products are sourced from certified organic farms and processed in WHO GMP certified facilities without any synthetic additives or preservatives.
-                </p>
-              </CardContent>
-            </Card>
 
             <Card>
               <CardContent className="p-6">

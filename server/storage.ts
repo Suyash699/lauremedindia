@@ -395,6 +395,36 @@ export class MemStorage implements IStorage {
     this.specialties.set(id, specialty);
     return specialty;
   }
+
+  // Cart methods
+  async getCartItems(userId: string): Promise<CartItem[]> {
+    return Array.from(this.cartItems.values()).filter(
+      (item) => item.userId === userId,
+    );
+  }
+
+  async addToCart(insertItem: InsertCartItem): Promise<CartItem> {
+    const id = randomUUID();
+    const item: CartItem = {
+      ...insertItem,
+      id,
+      createdAt: new Date(),
+    } as any;
+    this.cartItems.set(id, item);
+    return item;
+  }
+
+  async updateCartItem(id: string, quantity: number): Promise<CartItem | undefined> {
+    const existing = this.cartItems.get(id);
+    if (!existing) return undefined;
+    const updated = { ...existing, quantity } as CartItem;
+    this.cartItems.set(id, updated);
+    return updated;
+  }
+
+  async removeFromCart(id: string): Promise<boolean> {
+    return this.cartItems.delete(id);
+  }
 }
 
 export const storage = new MemStorage();
